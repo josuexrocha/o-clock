@@ -1,7 +1,7 @@
 
 # La formation Concepteur Developpeur d'Applications chez O'Clock
 
-Ce dépôt contient mes projets, fiches récapitulatives et cheatsheets réalisés dans le cadre de ma formation.
+Ce dépôt contient mes projets, fiches récapitulatifs et cheatsheets réalisés dans le cadre de ma formation.
 
 ## Contenu du dépôt
 
