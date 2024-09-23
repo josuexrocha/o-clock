@@ -1,0 +1,29 @@
+[news]Lorem ipsum dolor sit amet
+John Marchill
+le 21 Juillet 2019
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque scelerisque suscipit nibh quis porttitor. Voilà, je tenais à le dire.
+
+[team]Le pair programming pour les n00bs
+Paul Darson
+le 2 Août 2019
+Le pair programming pour les dévs, c'est un peu comme certains fromages : c'est mieux à deux.
+
+[work]Pourquoi j'aime JS
+Bruce Ékoute
+le 7 Août 2019
+JavaScript est un langage très particulier, c'est indéniable. Je vous propose de faire le tour de toutes ces petites choses simples qui lui donnent une saveur si unique.
+
+[team]La situation de scribe
+Otis
+le 5 Septembre 2019
+Mais, vous savez, moi je ne crois pas qu'il y ait de bonne ou de mauvaise situation. Moi, si je devais résumer ma vie aujourd'hui avec vous, je dirais que c'est d'abord des rencontres, des gens qui m'ont tendu la main, peut-être à un moment où je ne pouvais pas, où j'étais seul chez moi. Et c'est assez curieux de se dire que les hasards, les rencontres forgent une destinée...
+
+[work]Le travail : pourquoi ce n'est jamais naturel ?
+Trouveur d'Éperon de Wyverne
+le 6 Septembre 2019
+Le terme "travail" vient du latin "trepalium" qui signifie "torture". Voilà, je vous laisse avec ça.
+
+[news]Les chats augmentent la longévité
+Rincevent
+le 27 Septembre 2019
+Jusqu'à un certain nombre. Au delà de 28 chats, les scientifiques semblent quelque peu sceptiques. Surtout sur l'aspect budgétaire...

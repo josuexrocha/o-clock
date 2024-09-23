@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Figurines</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:200,400,700">
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__title-container">
+            <h1 class="header__title">oFig</h1>
+            <h2 class="header__subtitle">Figurines et statuettes</h2>
+        </div>
+        <div class="header__theme-container">
+            <h2 class="header__theme-title">
+                Votre panier <span class="header__theme-number-products">2 produits</span>
+            </h2>
+        </div>
+    </header>
+
+    <main class="container">
+        <h3>Votre panier</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Figurine</th>
+                    <th>Prix unitaire</th>
+                    <th>Quantité</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cloud Strife</td>
+                    <td>59 €</td>
+                    <td>
+                        <label for="quantity-of-producs"></label>
+                        <input type="number" id="quantity-of-producs" name="quantity-of-producs" value="1" min="1"/>
+                        <span>supprimer</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tifa Lockhart</td>
+                    <td>69 €</td>
+                    <td>
+                        <label for="quantity-of-producs"></label>
+                        <input type="number" id="quantity-of-producs" name="quantity-of-producs" value="1" min="1"/>
+                        <span>supprimer</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Barret Wallace</td>
+                    <td>69 €</td>
+                    <td>
+                        <label for="quantity-of-producs"></label>
+                        <input type="number" id="quantity-of-producs" name="quantity-of-producs" value="1" min="1"/>
+                        <span>supprimer</span>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total de la commande :</td>
+                    <td><em>197 €</em></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+        <h3>Préférences de livraison</h3>
+        <form action="/resultat.html" method="post">
+            <fieldset>
+                <legend>Où souhaitez-vous être livré ?</legend>
+                <ul>
+                    <li>
+                        <input type="radio" id="mon-adresse-courante" name="address" checked>
+                        <label for="mon-adresse-courante">Mon adresse courante</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="autre-adresse" name="address">
+                        <label for="autre-adresse">Autre adresse</label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset>
+                <legend>Adresse</legend>
+                <ul>
+                    <li>
+                        <label for="rue">Rue</label>
+                        <br>
+                        <input type="text" id="rue" name="user-street" spellcheck="true">
+                    </li>
+                    <li>
+                        <label for="code-postal">Code Postal</label>
+                        <br>
+                        <input type="text" id="code-postal" name="postal-code" maxlength="5">
+                    </li>
+                    <li>
+                        <label for="ville">Ville</label>
+                        <br>
+                        <input type="text" id="ville" name="town" spellcheck="true">
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset>
+                <legend>Options</legend>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="suivi-sms" name="options" checked>
+                        <label for="suivi-sms">Suivi de livraison par sms (inclus)</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="rembourse" name="options">
+                        <label for="rembourse">Satisfait ou remboursé (+ 2 euros)</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="garanti" name="options">
+                        <label for="garanti">Garanti 2 ans (+ 10 euros)</label>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>Informations complementaires</legend>
+                <ul>
+                    <li>
+                        <label for="informations-complementaires">interphone, bâtiment, etc</label>
+                        <br>
+                        <input type="text" id="informations-complementaires" name="informations" spellcheck="true">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+        <hr>
+        <h4>Montant total à régler : <em>197 €</em></h4>
+        <hr>
+        <div class="button-back-or-pay">
+            <span class="shop-back">Continuer vos achats</span>
+            <span class="shop-pay">Valider et payer</span>
+        </div>
+        <hr>
+    </main>
+    <footer class="footer">
+        oFig - toutes les images sont sous copyright SquareEnix
+    </footer>
+</body>
+
+</html>

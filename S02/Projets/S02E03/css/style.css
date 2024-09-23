@@ -1,0 +1,286 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background: #faf7f5;
+  padding: 0;
+  margin: 0;
+}
+
+a:focus,
+button:focus {
+  outline: 3px solid #4d6eff;
+}
+
+.btn {
+  text-decoration: none;
+  cursor: pointer;
+  background: #b5b5b5;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  color: #1f2937;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #c9c9c9;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template: 
+    "nicole title title" 1fr
+    "nicole team work" 2fr
+    "news-1 news-2 ." 2fr / 1fr 1fr 1fr ;
+  gap: 20px;
+}
+
+.bento {
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.bento--nicole {
+  background: linear-gradient(
+      to bottom,
+      rgba(82, 82, 82, 0.5),
+      rgba(82, 82, 82, 0.5)
+    ),
+    url("../images/nicole.jpg") center/cover no-repeat;
+  min-height: 50vh;
+  grid-area: nicole;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.logo__img {
+  width: 50px;
+  object-fit: cover;
+}
+
+.logo__title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.logo__title span {
+  background: #4d6eff;
+  padding: 0 0.2em;
+  color: #020417;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+
+.menu li,
+.btn {
+  transition: color 250ms ease-in, background 250ms ease-in,
+    transform 250ms ease-in;
+}
+
+.menu li:hover {
+  /* Si on veut que le menu soit plus grand au survol */
+  /* transform: scale(1.1); */
+}
+
+.bento--title {
+  background: #4d6eff;
+  text-align: center;
+  padding: 1em;
+  border-radius: 15px;
+  transition: 0.3s;
+  color: #020417;
+  grid-area: title;
+}
+
+.bento--title .bento__title {
+  font-weight: 900;
+  margin-bottom: 0;
+}
+
+.bento--title .bento__title::after {
+  content: "";
+  display: block;
+  width: 5%;
+  height: 2px;
+  background: #020417;
+  margin: 0.5em auto;
+}
+
+.bento__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.bento__header .bento__title {
+  margin-bottom: 0;
+}
+
+.bento__metas {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.bento__meta--avatar {
+  width: 1.8em;
+  height: 1.8em;
+}
+
+.bento__meta--author {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.bento__meta--date {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.bento__footer {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: auto;
+}
+
+.bento--work {
+  border: 5px solid #ffbe00;
+  grid-area: work;
+}
+
+.bento--team {
+  border: 5px solid #00a96e;
+  grid-area: team;
+}
+
+.bento--news {
+  border: 5px solid #00b5ff;
+}
+
+.bento--3 {
+  grid-area: news-1;
+}
+
+.bento--4 {
+  grid-area: news-2;
+}
+
+.bento__tag {
+  position: absolute;
+  /* Pour venir vraiment au bord des bordures */
+  bottom: -5px;
+  left: -5px;
+  padding: 0.7em;
+  padding-left: 1em;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+  color: #020417;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.bento__tag--work {
+  background-color: #ffbe00;
+}
+
+.bento__tag--team {
+  background-color: #00a96e;
+}
+
+.bento__tag--news {
+  background-color: #00b5ff;
+}
+
+.bento__tag--work:hover {
+  background-color: #ffd700;
+}
+
+.bento__tag--team:hover {
+  background-color: #00c78e;
+}
+
+.bento__tag--news:hover {
+  background-color: #00cfff;
+}
+
+@media screen and (max-width: 320px) {
+  .bento {
+    margin: 0;
+  }
+
+  .menu {
+    margin-top: 4rem;
+    padding: 0;
+    margin-inline: auto;
+    font-size: 0.8em;
+  }
+
+  .btn {
+    padding: 0.5em;
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .container {
+    grid-template: 
+    "nicole title title" 
+    "nicole team team" 
+    "work news-1 news-2" / 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .container {
+    grid-template: 
+    "nicole nicole" 
+    "title title"
+    "team work"
+    "news-1 news-2";
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .container {
+    grid-template:
+    "nicole" 2fr
+    "title" 1fr
+    "team" 1fr 
+    "work" 1fr 
+    "news-1" 1fr 
+    "news-2" 1fr;
+  }
+}
+

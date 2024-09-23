@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background: #eee;
+    font-family: "Asap", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding-left: 250px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+}
+
+.header {
+    float: left;
+    margin-left: -250px;
+    width: 14rem;
+    border-right: 1px solid rgba(0, 0, 0, .1);
+    position: fixed;
+}
+
+.search {
+    padding: 1rem;
+    background: #f39c12;
+}
+
+.search-input {
+    padding: .75rem 1rem;
+    border: none;
+    font-size: 1.2em;
+    width: 100%;
+    border-radius: 2rem;
+}
+
+.title {
+    font-size: 2em;
+    font-weight: bold;
+    border-bottom: 3px solid #f39c12;
+    padding-bottom: 1rem;
+}
+
+.nav {
+    padding: 2rem;
+    height: 100vh;
+    width: 14rem;
+}
+
+.nav-links {
+    margin-top: 2rem;
+}
+
+.nav-item {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: #ccc;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-item-link:focus {
+    border-bottom: 3px solid #f39c12;
+}
+
+.page {
+    padding: 5rem 2rem 2rem;
+}
+
+.content-focus {
+    border-bottom: 3px solid #ccc;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.content-titles {
+    width: 50%;
+    font-size: 3em;
+    margin-right: 2rem;
+}
+
+.content-title {
+    max-width: 450px;
+    margin-left: auto;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+h2 {
+    font-weight: 700;
+    color: #aaa;
+}
+
+.content-picture {
+    width: 50%;
+    position: relative;
+    z-index: 0;
+}
+
+.picture-desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+}
+
+.rounded {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.picture {
+    width: 100%;
+    display: block;
+}
+
+.content-quote {
+    border-top: 3px solid #ccc;
+    margin-top: 2rem;
+}
+
+.content p {
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.content h3 {
+    font-size: 1.7em;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.content ol {
+    list-style-type: decimal;
+    font-size: 1.1em;
+    margin-left: 1.5em;
+    line-height: 1.5;
+}
+
+.articles {
+    margin-top: 5rem;
+}
+
+.articles-container {
+    margin-top: 2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin-bottom: 2rem;
+    max-width: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card-title {
+    margin: 2rem 1rem;
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+.card-content {
+    padding: 0 1rem;
+}
+
+.card-content p {
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.card-footer {
+    margin: 2rem 1rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    font-size: 1.2em;
+    border: #f39c12 solid 3px;
+    border-radius: 30px;
+    margin: 0.25rem;
+    transition: all 0.3s ease;
+}
+
+.footer {
+    background: #111;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #aaa;
+}
+
+.btn:hover,
+.nav-item:hover {
+    color: #fff;
+    background-color: #f39c12;
+    font-weight: 700;
+}
+
+@media (max-width: 1200px) {
+
+    .content-focus {
+        display: block;
+    }
+
+    .content-titles {
+        width: auto;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .content-title {
+        max-width: none;
+    }
+
+    .content-picture {
+        width: auto;
+    }
+
+    .articles-container {
+
+        display: block;
+    }
+
+    .card {
+        width: auto;
+    }
+
+}
+
+@media (max-width: 900px) {
+    .header {
+        position: static;
+        width: auto;
+        float: none;
+        margin-left: 0;
+    }
+
+    .container {
+        width: 96%;
+        padding-left: 0;
+    }
+
+    .page {
+        padding: 0 1rem;
+    }
+
+    .nav {
+        display: inline;
+    }
+
+    .nav .title {
+        display: none;
+    }
+
+    .nav-links {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-item {
+        width: calc(33.3333% - .5rem);
+        text-align: center;
+    }
+
+    .nav-item-link {
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,28 @@
+O'Clock
+Student News
+
+Plan - Mentions - Contact
+
+O'News
+-
+Votre source incontournable pour rester à jour avec les dernières actualités de la programmation et du développement informatique !
+
+[Team] Le travail en groupe
+John Marshal
+le 15 septembre 2023
+Le travail en groupe est une des clés de la réussite. C'est pourquoi nous avons décidé de vous en parler.
+
+[Work] C'est quoi le DevOps ?
+Ohz Dalian
+le 19 juillet 2022
+L'objectif principal du DevOps est d'améliorer la collaboration, l'efficacité et la productivité tout au long du cycle de vie du développement logiciel, de la conception à la production.
+
+[News] La situation de scribe
+Otis
+le 5 Septembre 2019
+Mais, vous savez, moi je ne crois pas qu'il y ait de bonne ou de mauvaise situation. Moi, si je devais résumer ma vie aujourd'hui avec vous, je dirais que c'est d'abord des rencontres, des gens qui m'ont tendu la main, peut-être à un moment où je ne pouvais pas, où j'étais seul chez moi. Et c'est assez curieux de se dire que les hasards, les rencontres forgent une destinée...
+
+[News] Le travail : pourquoi ce n'est jamais naturel ?
+Bruce Ékoute
+le 7 Août 2019
+Le terme "travail" vient du latin "trepalium" qui signifie "torture". Voilà, je vous laisse avec ça.
