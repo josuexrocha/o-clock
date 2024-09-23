@@ -52,12 +52,6 @@ Cet atelier visait à découvrir Figma et à créer une maquette graphique.
 - Objectif : Concevoir une maquette fil rouge pour un site web avec Figma.
 - Contenu : Prise en main de Figma, création de frames, auto-layout, composants, et styles locaux.
 
-## Ressources
-
-- [Fiches récapitulatives](./fiches)
-- [Cours sur Figma et Webdesign](./cours)
-- [Ressources supplémentaires](./ressources.md)
-
 ## Comment contribuer
 
 Si vous souhaitez proposer des améliorations ou ajouter de nouveaux challenges, n'hésitez pas à soumettre une pull request !
