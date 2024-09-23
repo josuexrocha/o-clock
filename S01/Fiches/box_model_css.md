@@ -1,5 +1,5 @@
 
-# Fiche récapitulative : Box Model, structuration sémantique, et propriétés CSS avancées
+# Box Model, structuration sémantique, et propriétés CSS avancées
 
 ## 1. Le Box Model (Modèle de Boîte)
 

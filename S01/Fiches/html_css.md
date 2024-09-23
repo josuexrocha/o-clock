@@ -1,5 +1,5 @@
 
-# Fiche récapitulative sur les notions HTML et CSS
+# HTML et CSS
 
 ## HTML - Structuration et sémantique
 

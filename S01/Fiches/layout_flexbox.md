@@ -1,5 +1,5 @@
 
-# Fiche récapitulative : E03 - Layout
+# Layout
 
 ## 1. Introduction aux balises sémantiques : `<aside>` et `<article>`
 
