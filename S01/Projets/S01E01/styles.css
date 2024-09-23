@@ -1,0 +1,35 @@
+body {
+    font-family: sans-serif;
+    background-color: #fff3db;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 250%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    font-weight: bolder;
+    font-size: 225%;
+    color: red;
+    text-align: center;
+}
+
+h3 {
+    text-decoration: underline;
+    font-style: italic;
+    font-weight: lighter;
+    text-align: center;
+}
+
+b {
+    color: red;
+}
+
+span {
+    color: red;
+}

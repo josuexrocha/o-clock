@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    font-family: "Raleway", sans-serif;
+}
+
+.top-header {
+    background-color: #c80000;
+    padding: 20px;
+    color: #fff;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 700;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+strong {
+    font-weight: 700;
+}
+
+h2 {
+    background-color: #666;
+    color: #fff;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 10px;
+}
+
+em {
+    font-style: italic;
+    font-size: 1.3em;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1000px;
+}
+
+article {
+    border: solid 1px #666;
+    margin: 20px;
+    padding: 10px;
+    width: 290px;
+    text-align: left;
+}
+
+.price-off {
+    background-color: #666666;
+    border: solid 8px #a4a4a4;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 5px;
+    transform-origin: 50px 50px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.game {
+    text-transform: uppercase;
+    color: #666;
+    font-size: 0.75em;
+    margin-top: 5px;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 1.5em;
+    margin: 5px;
+}
+
+.to-buy {
+    background-color: #c80000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin-top: 15px;
+    color: #fff;
+}
+
+.price {
+    font-weight: 700;
+}
+
+.soldes {
+    background-color: #c80000;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 15px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    border-radius: 0 20px 20px 0;
+    position: fixed;
+    top: 50%;
+    z-index: 999;
+}
+
+footer {
+    background-color: #666;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
