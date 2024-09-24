@@ -1,58 +1,122 @@
+/* pour toutes les balises, la largeur de boite est à partir du border */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-body {
-    background-color: rgb(168, 54, 255);
-    margin: 0;
+.page {
+  background-color: #6359CD;
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 64px); /* viewport height - palette height */
 }
 
-#configuration {
-    background-color: rgb(89, 4, 155);
-    text-align: center;
-    padding-block: 5vh;
+.configuration {
+  background-color: #3148AD;
+  text-align: center;
+  padding: 1em;
 }
 
-input, button {
-    height: 50px;
-    font-size: 1.25rem;
-    padding: 15px;
+.invader {
+  flex-grow: 1;
+  text-align: center;
+  align-content: center;
 }
 
-input {
-    width: 250px;
-    border: none;
-}
-
-#gridSize {
-    border-radius: 10px 0 0 10px;
-}
-
-button {
-    border-radius: 0 10px 10px 0;
-    border: none;
-    width: 120px;
-    color: #fff;
-    background-color: rgb(168, 54, 255);
-}
-
-#invader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-block: 15vh;  
-}
-
-/* 
 .row {
-    display: flex;
-} */
-
-.cell {
-    background-color: rgb(173, 173, 173);
-    border: solid 3px rgb(70, 70, 70);
-    width: 50px;
-    height: 50px;
+  display: flex;
+  justify-content: center;
 }
 
+.pixel {
+  width: 25px;
+  height: 25px;
+  border: 2px solid;
+}
 
+/* survol du pixel */
+.pixel:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.pixel--white {
+  background-color: whitesmoke;
+  border-color: grey;
+}
+
+.pixel--gray {
+  background-color: #485460;
+  border-color: #1E272E;
+}
+
+.palette--empty {
+  background: #D2DAE2;
+  border: 2px solid #8997A3;
+}
+
+.palette--color1 {
+  background-color: #485460;
+  border-color: #1E272E;
+}
+
+.palette--color2 {
+  background-color: #FBC048;
+  border-color: #F7A835;
+}
+
+.palette--color3 {
+  background-color: #79EA83;
+  border-color: #65C66D;
+}
+
+/* form */
+
+.form-field {
+  padding: 1em;
+  border: 0;
+  font-size: 1.2em;
+  margin-right: 2px;
+}
+
+.form-field--grid {
+  border-radius: .5em 0 0 .5em;
+  width: 11em;
+}
+
+.form-field--validate {
+  background-color: #9B68E4;
+  color: white;
+  border-radius: 0 .5em .5em 0;
+}
+
+/* palette */
+
+.palette {
+  background-color: #4945A3;
+  position: fixed;
+  right: calc((100vw - 208px) / 2);
+  bottom: 0;
+  padding: 0.5em;
+  display: flex;
+}
+
+.palette-color {
+  margin: .5em;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  border-width: 2px;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.palette-color:hover {
+  transform: scale(1.1);
+}
+
+.palette-color--active,
+.palette-color--active:hover {
+  transform: scale(1.4);
+}

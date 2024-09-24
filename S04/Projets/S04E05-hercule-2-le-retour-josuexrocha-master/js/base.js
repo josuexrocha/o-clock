@@ -100,7 +100,7 @@ const base = {
       else if (
         typeof profil.name !== 'string'
         || typeof profil.inRelationship !== 'boolean'
-        || typeof profil.job !== 'string'
+        || typeof profil.name !== 'string'
         || typeof profil.age !== 'number'
         || (typeof profil.department !== 'number' && typeof profil.department !== 'string')
         || typeof profil.arm !== 'number') {
