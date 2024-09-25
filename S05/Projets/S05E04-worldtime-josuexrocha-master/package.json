@@ -1,0 +1,18 @@
+{
+  "name": "s05e04-worldtime-benoitoclock",
+  "version": "1.0.0",
+  "description": "Aujourd'hui nous avons découvert le module Express qui nous permet de gérer plus facilement un serveur web en NodeJS. Mais également d'afficher des vues simples grâce à l'inclusion de fichiers HTML. Ce soir vous allez devoir afficher une liste de capitales et créer les pages permettant de connaître la date et l'heure dans chacune d'elle. À cette fin vous avez :",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.11.11",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0"
+  }
+}
