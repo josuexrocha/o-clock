@@ -1,14 +1,16 @@
 
-# Wiki Dev Web - Saison 6 : Méthodes HTTP GET et POST avec Express
+# Méthodes HTTP GET et POST avec Express
 
 ## Sommaire
-1. [Introduction aux Méthodes HTTP](#introduction-aux-méthodes-http)
-   - [GET : Envoi de Données via l'URL](#get--envoi-de-données-via-lurl)
-   - [POST : Envoi de Données via le Corps de la Requête](#post--envoi-de-données-via-le-corps-de-la-requête)
-2. [Gestion des Requêtes GET et POST avec Express](#gestion-des-requêtes-get-et-post-avec-express)
-   - [Récupération des Paramètres GET](#récupération-des-paramètres-get)
-   - [Récupération des Données POST](#récupération-des-données-post)
-   - [Importance du Middleware express.urlencoded()](#importance-du-middleware-expressurlencoded)
+- [Méthodes HTTP GET et POST avec Express](#méthodes-http-get-et-post-avec-express)
+  - [Sommaire](#sommaire)
+  - [Introduction aux Méthodes HTTP](#introduction-aux-méthodes-http)
+    - [GET : Envoi de Données via l'URL](#get--envoi-de-données-via-lurl)
+    - [POST : Envoi de Données via le Corps de la Requête](#post--envoi-de-données-via-le-corps-de-la-requête)
+  - [Gestion des Requêtes GET et POST avec Express](#gestion-des-requêtes-get-et-post-avec-express)
+    - [Récupération des Paramètres GET](#récupération-des-paramètres-get)
+    - [Récupération des Données POST](#récupération-des-données-post)
+    - [Importance du Middleware express.urlencoded()](#importance-du-middleware-expressurlencoded)
 
 ---
 
