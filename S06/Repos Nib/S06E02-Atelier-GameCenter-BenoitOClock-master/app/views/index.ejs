@@ -1,0 +1,11 @@
+<%- include("partials/header") %>
+
+  <main>
+    <% if (locals.user){ %>
+      <p class="welcome">Bienvenue <strong><%= locals.user?.login %></strong></p>
+    <% } else { %>
+      <p class="welcome">Bienvenue<br><a href="/signin">Connectez-vous</a> pour accéder aux jeux</p>
+    <% } %>
+    
+  </main>
+  <%- include("partials/footer") %>

@@ -1,0 +1,29 @@
+<!-- views/pages/film.ejs -->
+<%- include('../partials/header') %>
+
+    <main>
+        <div class="movie-details">
+            <img src="<%= film.image_src %>" alt="Affiche du film <%= film.title %>">
+            <div class="info">
+                <h2>
+                    <%= film.title %> (<%= film.release_date %>)
+                </h2>
+                <p><span class="label">Titre original :</span>
+                    <%= film.original_title %>
+                </p>
+                <p><span class="label">Description :</span>
+                    <%= film.description %>
+                </p>
+                <p><span class="label">Réalisateur :</span>
+                    <%= film.director %>
+                </p>
+                <p><span class="label">Durée :</span>
+                    <%= film.duration %> minutes
+                </p>
+            </div>
+        </div>
+    </main>
+
+    </body>
+
+    </html>

@@ -1,0 +1,22 @@
+<!-- views/pages/films.ejs -->
+<%- include('../partials/header') %>
+
+    <main class="movies-list">
+        <h2>Liste des films Ghibli</h2>
+        <div class="movies-grid">
+            <% films.forEach(film=> { %>
+                <div class="movie-card">
+                    <a href="/films/<%= film.id %>">
+                        <img src="<%= film.image_src %>" alt="Affiche de <%= film.title %>">
+                        <h3>
+                            <%= film.title %>
+                        </h3>
+                    </a>
+                </div>
+                <% }) %>
+        </div>
+    </main>
+
+    </body>
+
+    </html>

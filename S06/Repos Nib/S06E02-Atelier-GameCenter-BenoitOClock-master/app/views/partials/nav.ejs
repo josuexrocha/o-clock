@@ -1,0 +1,11 @@
+<nav>
+  <ul>
+    <li><a href="/">Accueil</a></li>
+    <% for(const game of games){ %>
+      <li><a href="/game/<%= game.name.toLowerCase() %>">
+          <%= game.title %>
+        </a></li>
+      <% } %>
+        <li><a href="/signin">Connexion</a></li>
+  </ul>
+</nav>

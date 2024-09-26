@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>GameHub</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Optional_chaining -->
+  <% if(locals.game?.cssFile){ %>
+    <link rel="stylesheet" href="/css/<%= locals.game.cssFile %>">
+    <% } %>
+</head>
+
+<body>
+  <header>
+    <h1>GameHub</h1>
+    <%- include('nav') %>
+  </header>

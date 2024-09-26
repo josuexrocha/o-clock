@@ -1,0 +1,21 @@
+<%- include("partials/header") %>
+  <main>
+    <form method="post">
+      <h3>Connexion</h3>
+      <div>
+        <label for="login-input">login</label>
+        <input type="text" name="login" id="login-input">
+      </div>
+      <div>
+        <label for="pwd-input">mot de passe</label>
+        <input type="password" name="password" id="pwd-input">
+      </div>
+      <% if(locals.error) { %>
+        <p class="error">
+          <%= locals.error %>
+        </p>
+        <% } %>
+          <button type="submit">Envoi</button>
+    </form>
+  </main>
+  <%- include("partials/footer") %>

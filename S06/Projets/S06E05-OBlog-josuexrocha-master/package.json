@@ -1,0 +1,16 @@
+{
+  "name": "s06e05-oblog-josuexrocha-master",
+  "version": "1.0.0",
+  "description": "![Aperçu](integration/apercu.png \"Aperçu\")",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.0"
+  }
+}

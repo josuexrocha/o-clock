@@ -1,0 +1,199 @@
+/* Styles globaux */
+body {
+    margin: 0;
+    background-color: #141414;
+    color: #ffffff;
+    font-family: 'Roboto', Arial, sans-serif;
+  }
+  
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #e50914;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  h1, h2, h3 {
+    font-weight: normal;
+  }
+  
+  /* En-tête */
+  header {
+    background-color: #141414;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  nav {
+    margin-left: 40px;
+  }
+  
+  nav a {
+    margin-right: 20px;
+    font-size: 18px;
+  }
+  
+  nav a:hover {
+    color: #e50914;
+  }
+  
+  /* Page d'accueil */
+  main {
+    padding: 40px;
+  }
+  
+  main h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  main p {
+    font-size: 18px;
+  }
+  
+  main a.button {
+    display: inline-block;
+    background-color: #e50914;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 4px;
+  }
+  
+  main a.button:hover {
+    background-color: #f40612;
+  }
+  
+  /* Formulaires */
+  form {
+    margin-top: 20px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #e50914;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #f40612;
+  }
+  
+  /* Liste des films */
+  .movies-list {
+    padding: 40px;
+  }
+  
+  .movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+  }
+  
+  .movie-card {
+    background-color: #1c1c1c;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  
+  .movie-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .movie-card h3 {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #141414;
+    text-align: center;
+  }
+  
+  /* Page d'un film */
+  .movie-details {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+  }
+  
+  .movie-details img {
+    width: 100%;
+    max-width: 300px;
+    margin-right: 40px;
+  }
+  
+  .movie-details .info {
+    max-width: 600px;
+  }
+  
+  .movie-details h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .movie-details p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .movie-details .label {
+    font-weight: bold;
+    color: #777777;
+  }
+  
+  /* Page 404 */
+  .page-404 {
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .page-404 h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .page-404 p {
+    font-size: 18px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .movie-details {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .movie-details img {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+  

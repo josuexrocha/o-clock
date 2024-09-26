@@ -1,0 +1,28 @@
+<!-- views/pages/index.ejs -->
+<%- include('../partials/header') %>
+
+    <main>
+        <h2>Bienvenue sur la Ghibliotheque</h2>
+        <p>Découvrez les merveilleux films du studio Ghibli.</p>
+
+        <a href="/films" class="button">Voir la liste des films</a>
+
+        <!-- Formulaire de recherche -->
+        <form action="/search" method="GET">
+            <input type="text" name="title" placeholder="Rechercher un film par titre">
+            <label>
+                <input type="checkbox" name="order" value="asc"> Trier par ordre alphabétique
+            </label>
+            <button type="submit">Rechercher</button>
+        </form>
+
+        <!-- Formulaire de login -->
+        <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="Pseudo">
+            <button type="submit">Se connecter</button>
+        </form>
+    </main>
+
+    </body>
+
+    </html>

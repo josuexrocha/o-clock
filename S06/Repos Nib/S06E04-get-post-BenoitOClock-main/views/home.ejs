@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GET/POST</title>
+</head>
+
+<body>
+  <h1>Hello</h1>
+  <% if(locals.user.name && locals.user.age && locals.user.job){ %>
+    Vous vous appelez <%= locals.user.name %>.<br>
+    Vous avez <%= locals.user.age %> ans.<br>
+    Vous exercez la profession de <%= locals.user.job %>.
+  <% } %>
+
+  <form action="/form" method="POST">
+    <h3>Formualire en POST</h3>
+    <div>
+      <label for="firstname-input">Prénom</label>
+      <input type="text" name="firstname" id="firstname-input">
+    </div>
+    <div>
+      <label for="lastname-input">Nom</label>
+      <input type="text" name="lastname" id="lastname-input">
+    </div>
+    <button type="submit">Envoi</button>
+  </form>
+
+  <form action="/form" method="GET">
+    <h3>Formualire en GET</h3>
+    <div>
+      <label for="firstname-input">Prénom</label>
+      <input type="text" name="firstname" id="firstname-input">
+    </div>
+    <div>
+      <label for="lastname-input">Nom</label>
+      <input type="text" name="lastname" id="lastname-input">
+    </div>
+    <button type="submit">Envoi</button>
+  </form>
+</body>
+
+</html>

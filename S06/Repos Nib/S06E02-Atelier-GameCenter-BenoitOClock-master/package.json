@@ -1,0 +1,17 @@
+{
+  "name": "s06e02-atelier-gamecenter-benoitoclock",
+  "version": "1.0.0",
+  "description": "Bon, on a quelques jeux qui traînent, c'est cool ! Mais c'est le bazar !",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.11.11",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}
