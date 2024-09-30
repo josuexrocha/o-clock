@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trombinoclock</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../static/css/style.css" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Entête de page -->
+    <header>
+      <a class="header-logo" href="./index.html">
+        <img src="../static/images/trombinoclock.png" alt="Logo de l'école" />
+      </a>
+      <nav>
+        <ul>
+          <a href="./index.html">
+            <li>Accueil</li>
+          </a>
+          <a href="./promos.html">
+            <li>Promotions</li>
+          </a>
+          <a href="./ajouter-etudiant.html">
+            <li>Ajouter étudiant</li>
+          </a>
+          <a href="./login.html">
+            <li>Se connecter</li>
+          </a>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="form-page">
+      <h1>Ajouter un étudiant</h1>
+      <form method="POST">
+        <label for="first_name">Prénom</label
+        ><input type="text" name="first_name" id="first_name" />
+        <label for="last_name">Nom</label
+        ><input type="text" name="last_name" id="last_name" />
+        <label for="github_username">Pseudo github</label
+        ><input type="text" name="github_username" id="github_username" />
+        <label for="profile_picture_url">Image de profil</label
+        ><input
+          type="text"
+          name="profile_picture_url"
+          id="profile_picture_url"
+        />
+        <label for="promotion">Promotion</label>
+        <select name="promotion" id="id">
+          <option value="1">Promo 1</option>
+          <option value="1">Promo 2</option>
+          <option value="1">Promo 3</option>
+        </select>
+        <button type="submit">Envoyer</button>
+      </form>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+      <span>Trombinoclock ® 2024 - Tous droits réservés</span>
+    </footer>
+  </body>
+</html>

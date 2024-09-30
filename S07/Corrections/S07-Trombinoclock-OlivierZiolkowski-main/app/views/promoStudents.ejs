@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+
+ <!-- Corps de la page -->
+    <main class="promotion">
+      <div class="promotion__left">
+        <h1><%= promoName %></h1>
+      </div>
+      <div class="promotion__right promotion__right--students">
+        <ul>
+            <% promoStudents.forEach(student => { %>
+                <li><%= student.last_name.toUpperCase() %> <%= student.first_name %></li>
+            <% }) %>
+
+        </ul>
+      </div>
+    </main>
+
+<%- include('partials/footer') %>

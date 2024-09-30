@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Étudiants de la promo <%= promo.name %>
+  </title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Étudiants de la promo <%= promo.name %>
+    </h1>
+    <nav>
+      <a href="/promotions/<%= promo.id %>">Retour à la promo</a>
+      <a href="/promotions">Retour aux promotions</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Liste des étudiants</h2>
+    <ul>
+      <% students.forEach(student=> { %>
+        <li>
+          <img src="/static/images/user-icon.png"
+            alt="Icône de profil pour <%= student.first_name %> <%= student.last_name %>" width="50">
+          <%= student.first_name %>
+            <%= student.last_name %> (GitHub: <%= student.github_username %>)
+        </li>
+        <% }) %>
+    </ul>
+  </main>
+  <footer>
+    <p>&copy; 2024 Trombinoclock. Tous droits réservés.</p>
+  </footer>
+</body>
+
+</html>

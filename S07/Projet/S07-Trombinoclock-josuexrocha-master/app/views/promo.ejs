@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de la promo <%= promo.name %>
+    </title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Promo <%= promo.name %>
+        </h1>
+        <nav>
+            <a href="/promotions">Retour aux promotions</a>
+            <a href="/promotions/<%= promo.id %>/students">Voir les étudiants de la promo</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Détails de la promotion</h2>
+        <p><strong>ID:</strong>
+            <%= promo.id %>
+        </p>
+        <p><strong>Nom:</strong>
+            <%= promo.name %>
+        </p>
+        <p><strong>Année:</strong>
+            <%= promo.year %>
+        </p>
+        <a href="/promotions/<%= promo.id %>/students" class="button">Voir les étudiants</a>
+    </main>
+    <footer>
+        <p>&copy; 2024 Trombinoclock. Tous droits réservés.</p>
+    </footer>
+</body>
+
+</html>

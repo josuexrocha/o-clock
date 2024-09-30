@@ -1,0 +1,209 @@
+:root {
+  /* COLOR VARIABLES */
+  --primary-clr-bsc: #025498;
+  --primary-clr-lgt: #008ffe;
+  --neutral-clr-lgt: #ffffff;
+
+  /* FONT FAMILIES */
+  --headings-family-font: "Bebas Neue", sans-serif;
+  --text-family-font: "Montserrat", sans-serif;
+}
+
+/* GLOBAL RULES */
+
+body,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--text-family-font);
+}
+a,
+a:hover,
+a:visited {
+  color: var(--primary-clr-bsc);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--headings-family-font);
+}
+
+/* BODY RULES */
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+/* HEADER RULES */
+header {
+  height: 8rem;
+  display: flex;
+  flex-wrap: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .header-logo img {
+  width: 6rem;
+}
+
+header ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+nav a {
+  height: 8rem;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+nav a:hover {
+  background-color: var(--primary-clr-bsc);
+  color: var(--neutral-clr-lgt);
+  transition: all 0.5s ease;
+}
+
+nav li {
+  padding: 1rem;
+  font-family: var(--headings-family-font);
+  font-size: 1.5rem;
+}
+
+/* FOOTER RULES */
+
+footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+}
+
+/* MAIN RULES */
+
+main {
+  min-height: calc(100svh - 12rem);
+}
+
+.homepage {
+  background: url(../images/homepage.jpg) center / cover no-repeat;
+}
+
+/* PROMOTIONS PAGE */
+
+main .grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+main .grid__elt {
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12rem;
+  height: 4rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* PROMOTION PRESENTATION PAGE */
+
+.promotion {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.promotion > * {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.promotion__left {
+  color: var(--primary-clr-bsc);
+}
+
+.promotion__left h1 {
+  font-size: 64px;
+}
+
+.promotion__right ul {
+  list-style-type: none;
+}
+
+.promotion__right li {
+  font-weight: 500;
+  padding: 1rem 0;
+}
+
+/* SPECIFIC RULES FOR PROMO STUDENTS PAGE */
+
+.promotion__right--students {
+  height: calc(100svh - 12rem);
+  overflow: scroll;
+}
+
+.promotion__right--students::-webkit-scrollbar {
+  display: none;
+}
+
+/* FORMS PAGE (ADD STUDENT & LOGIN) */
+
+.form-page {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 50%;
+}
+
+form label {
+  margin-top: 1rem;
+  font-family: var(--headings-family-font);
+  color: var(--primary-clr-bsc);
+  font-size: 20px;
+}
+
+form select,
+#login {
+  margin-bottom: 2rem;
+}
+
+form select,
+form input,
+form button {
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 3rem;
+  border: solid 2px var(--primary-clr-bsc);
+  padding: 0.25rem;
+}
+
+form button {
+  background-color: var(--primary-clr-bsc);
+  color: var(--neutral-clr-lgt);
+  font-family: var(--headings-family-font);
+  font-size: 24px;
+}

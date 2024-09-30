@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+
+
+ <!-- Corps de la page -->
+        <main class="promotions">
+          <div class="grid">
+                <% promos.forEach(promo => { %>
+                    <a class="grid__elt" href="/promotions/<%= promo.id %>"><%= promo.name %></a>
+    <% }) %>
+          </div>
+        </main>
+
+        <%- include('partials/footer') %>

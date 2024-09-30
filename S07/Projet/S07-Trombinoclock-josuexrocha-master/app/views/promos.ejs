@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotions</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Liste des Promotions</h1>
+        <nav>
+            <a href="/">Accueil</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Promotions disponibles</h2>
+        <ul>
+            <% promos.forEach(promo=> { %>
+                <li>
+                    <a href="/promotions/<%= promo.id %>" class="button">
+                        <%= promo.name %> - <%= promo.year %>
+                    </a>
+                </li>
+                <% }) %>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 Trombinoclock. Tous droits réservés.</p>
+    </footer>
+</body>
+
+</html>
