@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+
+  <div class="container mt-5 pt-5">
+    <div class="row">
+      <%- include('partials/leftMenu') %>
+
+        <div class="col-lg-9">
+          <div class="row">
+            <% figurines.forEach(figurine=> { %>
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                  <a href="/article/<%= figurine.id %>">
+                    <img class="card-img-top" src="/images/<%= figurine.name %>.png" alt="<%= figurine.name %>">
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <a href="/article/<%= figurine.id %>" class="text-decoration-none text-dark">
+                        <%= figurine.name %>
+                      </a>
+                    </h5>
+                    <h6 class="card-subtitle mb-2 text-muted">$<%= figurine.price.toFixed(2) %>
+                    </h6>
+                    <p class="card-text">
+                      <%= figurine.description %>
+                    </p>
+                  </div>
+                  <div class="card-footer d-flex justify-content-between align-items-center">
+                    <small class="text-muted">
+                      Note moyenne : <%= figurine.average_note ? figurine.average_note.toFixed(1) : 'Aucune note' %> / 5
+                    </small>
+                    <a href="/bookmarks/add/<%= figurine.id %>" class="btn btn-outline-primary btn-sm">+ Favoris</a>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>

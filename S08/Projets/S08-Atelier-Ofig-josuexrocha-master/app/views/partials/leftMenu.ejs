@@ -1,0 +1,14 @@
+<div class="col-lg-3">
+  <h3 class="my-4">Catégories</h3>
+  <div class="list-group">
+    <% categories.forEach(category=> { %>
+      <a href="/category/<%= category.name %>"
+        class="list-group-item d-flex justify-content-between align-items-center">
+        <%= category.name %>
+          <span class="badge bg-primary rounded-pill">
+            <%= category.count %>
+          </span>
+      </a>
+      <% }) %>
+  </div>
+</div>
