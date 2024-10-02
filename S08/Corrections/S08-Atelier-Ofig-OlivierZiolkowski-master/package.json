@@ -1,0 +1,19 @@
+{
+  "name": "s08-atelier-ofig-olivierziolkowski",
+  "version": "1.0.0",
+  "description": "## Étape 1: Mise en place",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "pg": "^8.12.0"
+  }
+}

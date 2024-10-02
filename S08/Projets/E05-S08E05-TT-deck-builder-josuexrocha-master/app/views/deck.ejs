@@ -1,0 +1,30 @@
+<!-- views/deck.ejs -->
+
+<%- include('header') %>
+
+    <h1 data-text="<%= title %>">
+        <%= title %>
+    </h1>
+
+    <% if (deck.length===0) { %>
+        <p>Votre deck est vide.</p>
+        <% } else { %>
+            <div class="deckContainer">
+                <% deck.forEach( (card)=> { %>
+                    <div class="card">
+                        <a href="/card/<%= card.id %>">
+                            <img src="/visuals/<%= card.visual_name %>" alt="<%= card.name %> illustration">
+                            <p class="cardName">
+                                <%= card.name %>
+                            </p>
+                        </a>
+                        <!-- Lien pour supprimer la carte du deck -->
+                        <a class="link--removeCard" title="Supprimer du deck" href="/deck/remove/<%= card.id %>">-</a>
+                    </div>
+                    <% }) %>
+            </div>
+            <% } %>
+
+                <a href="/" class="back-link">Retour à la liste des cartes</a>
+
+                <%- include('footer') %>

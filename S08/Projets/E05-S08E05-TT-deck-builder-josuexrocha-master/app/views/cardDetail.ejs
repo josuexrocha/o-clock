@@ -1,0 +1,41 @@
+<!-- views/cardDetail.ejs -->
+
+<%- include('header') %>
+
+    <h1 data-text="<%= title %>">
+        <%= title %>
+    </h1>
+
+    <div class="cardDetail">
+        <img src="/visuals/<%= card.visual_name %>" alt="<%= card.name %> illustration" class="card-image">
+
+        <h2>
+            <%= card.name %>
+        </h2>
+
+        <p><strong>Élément :</strong>
+            <%= card.element ? card.element : 'Aucun' %>
+        </p>
+        <p><strong>Niveau :</strong>
+            <%= card.level %>
+        </p>
+
+        <p><strong>Valeurs :</strong></p>
+        <ul>
+            <li>Nord : <%= card.value_north %>
+            </li>
+            <li>Est : <%= card.value_east %>
+            </li>
+            <li>Sud : <%= card.value_south %>
+            </li>
+            <li>Ouest : <%= card.value_west %>
+            </li>
+        </ul>
+
+        <!-- Bouton pour ajouter la carte au deck -->
+        <a href="/deck/add/<%= card.id %>" class="button add-to-deck">Ajouter au Deck</a>
+    </div>
+
+    <a href="/" class="back-link">Retour à la liste des cartes</a>
+
+    <%- include('footer') %>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ma super page avec un super theme</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body class="<%= theme %>"><!-- TODO #4 : Utiliser la variable `theme` pour appliquer la classe à la balise body -->
+
+  <header class="menu">
+    <a href="/">Accueil</a>
+    <a href="/switch/light">Theme Light</a>
+    <a href="/switch/dark">Theme Dark</a>
+  </header>
+
+  <div class="container">
+    <div class="container__intro">
+      Est ce que c'est l'heure du goûter ?
+    </div>
+
+    <div class="container__content">
+      <%= isItGouterTime %>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>O'Fig - un magasin de figurines</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="./css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">O'Fig</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/bookmarks">Favoris</a>
+          </li>
+          <li class="nav-item">
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-ofig my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container container-main">
+
+    <div class="row">
+
+        <div class="col-lg-3">
+
+            <h1 class="my-4">O'Fig</h1>
+            <h5>Catégories</h5>
+            <div class="list-group">
+              <a class="list-group-item d-flex justify-content-between align-items-center" href="#">
+                  Les gentils
+                <span class="badge badge-primary badge-pill">4</span>
+              </a>
+              <a class="list-group-item d-flex justify-content-between align-items-center" href="#">
+                  Les méchants
+                <span class="badge badge-primary badge-pill">3</span>
+              </a>
+              <a class="list-group-item d-flex justify-content-between align-items-center" href="#">
+                  Les animaux
+                <span class="badge badge-primary badge-pill">1</span>
+              </a>
+            </div>
+    
+          </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <img class="" src="./images/aerith.png" alt="">
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                  <h3 class="card-title">
+                    Aerith
+                    <div class="badge badge-pill badge-gentil">Gentil</div>
+                  </h3>
+                  <p class="card-text">Taille réelle : 35cm</p>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, porro sunt quis sed ut facere consequatur quidem magni pariatur repellat eius? Incidunt voluptatem porro exercitationem asperiores maiores voluptatibus necessitatibus. Nobis fuga eaque aliquam quod, voluptatem minus illo necessitatibus at placeat delectus quos distinctio natus ipsum cumque amet repellat quo quidem.</p>
+                  <p class="card-text">3
+                    Note moyenne : &#9733; &#9733; &#9733; &#9733; &#9734;
+                    <br>
+                    <a href="#" data-toggle="modal" data-target="#reviewsModal">Détails des avis</a>
+                  </p>
+                  <h5>$24.99</h5>
+                  <p class="card-text">
+                    <a href="#" class="link-add-bookmarks">+ Ajouter aux favoris</a>
+                  </p>
+              </div>
+            </div>
+          
+          </div>
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Modale des avis -->
+  <div class="modal fade" id="reviewsModal" tabindex="-1" role="dialog" aria-labelledby="reviewsModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="reviewsModalLabel">Avis des internautes</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <section>
+            <h5>Une belle figurine &nbsp; <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></h5>
+            <p class="review-author">par Jean-Claude Dus</p>
+            <p>La finition est bien, le rose est vraiment rose. Seul bémol, le livreur a abimé la main droite.</p>
+          </section>
+
+          <hr>
+
+          <section>
+            <h5>Bof Bof... &nbsp; <small class="text-muted">&#9733; &#9733; &#9734; &#9734; &#9734;</small></h5>
+            <p class="review-author">par Thérèse de Monsou</p>
+            <p>La figurine ne tient pas debout seule. Certains détails sont mal finis, comme les bracelets.</p>
+          </section>
+
+          <hr>
+
+          <section>
+            <h5>Juste parfait &nbsp; <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small></h5>
+            <p class="review-author">par Monsieur Preskovitch</p>
+            <p>C'est tellement parfait, on dirait que c'est roulé à la main sous les aisselles.</p>
+          </section>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; O'Fig 2019 - Toutes les images sont sous Copyright SquareEnix</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/2.0.15/bootstrap-native-v4.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!-- views/cardList.ejs -->
+
+<%- include('header') %>
+
+  <h1 data-text="<%= title %>">
+    <%= title %>
+  </h1>
+
+  <div class="cardsContainer">
+    <% cards.forEach( (card)=> { %>
+      <div class="card">
+        <!-- Lien vers la page de détail de la carte -->
+        <a href="/card/<%= card.id %>">
+          <img src="/visuals/<%= card.visual_name %>" alt="<%= card.name %> illustration">
+          <p class="cardName">
+            <%= card.name %>
+          </p>
+        </a>
+        <!-- Lien pour ajouter la carte au deck -->
+        <a class="link--addCard" title="Ajouter au deck" href="/deck/add/<%= card.id %>">+</a>
+      </div>
+      <% }) %>
+  </div>
+
+  <%- include('footer') %>

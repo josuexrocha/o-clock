@@ -1,0 +1,17 @@
+      <aside class="col-lg-3">
+
+        <h1 class="my-4">O'Fig</h1>
+        
+        <h5>Catégories</h5>
+        <div class="list-group">
+          <% categories.forEach(category => { %>
+           
+            <a class="list-group-item d-flex justify-content-between align-items-center" href="/categorie/<%= category.name %>">
+              <%= category.name %>
+              <span class="badge badge-primary badge-pill"><%= category.nb_figurines %></span>
+              </a>
+            <% }) %>
+        </div>
+
+      </aside>
+      <!-- /.col-lg-3 -->

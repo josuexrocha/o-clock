@@ -1,0 +1,225 @@
+/* public/css/style.css */
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.05) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #1B263B; /* Bleu Nuit */
+  color: #F5F5F5; /* Blanc Cassé */
+}
+
+h1 {
+  position: relative;
+  color: #FF5722; /* Orange Vibrant */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h1::before,
+h1::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #00E676; /* Vert Néon */
+  background: none;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: glitch 2s infinite;
+}
+
+h1::after {
+  color: #E91E63; /* Rose Fuchsia */
+  animation-delay: -1s;
+}
+
+@keyframes glitch {
+  0% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.39deg);
+  }
+  5% {
+    clip: rect(85px, 9999px, 100px, 0);
+    transform: skew(0.43deg);
+  }
+  /* Ajouter d'autres étapes pour un effet plus réaliste */
+  100% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.39deg);
+  }
+}
+
+.header {
+  background-color: #455A64; /* Gris Foncé */
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 10px 20px;
+  box-shadow: 0 4px 2px -2px gray;
+}
+
+.header a {
+  color: #FFEB3B; /* Jaune Flash */
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s;
+}
+
+.header a:hover {
+  color: #00E676; /* Vert Néon */
+}
+
+.header .sitename {
+  font-size: 1.2em;
+  color: #E91E63; /* Rose Fuchsia */
+}
+
+.header nav {
+  align-self: center;
+}
+
+.main {
+  margin-top: 80px; /* Ajusté pour le header */
+  padding: 20px;
+}
+
+.main h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: 0;
+  color: #FF5722; /* Orange Vibrant */
+}
+
+.main h3 {
+  font-size: 1em;
+  font-weight: bold;
+  color: #FFEB3B; /* Jaune Flash */
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  justify-content: space-evenly;
+}
+
+.cardsContainer .card {
+  flex-basis: 200px;
+  position: relative;
+  text-align: center;
+  background-color: #455A64; /* Gris Foncé */
+  border: 2px solid #E91E63; /* Rose Fuchsia */
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cardsContainer .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #FF5722; /* Orange Vibrant */
+  background-color: rgba(0, 0, 0, 0.8); /* Noir plus opaque */
+}
+
+.card img {
+  min-width: 120px;
+  border-radius: 5px;
+}
+
+.card .cardName {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  color: #FFEB3B; /* Jaune Flash */
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 5px 0;
+  font-size: 0.8em;
+}
+
+.card .link--addCard {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #00E676; /* Vert Néon */
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #000000;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card .link--addCard:hover {
+  background-color: #FF5722; /* Orange Vibrant */
+  color: #FFFFFF;
+}
+
+.footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #455A64; /* Gris Foncé */
+  color: #F5F5F5; /* Blanc Cassé */
+  padding: 10px 0;
+  box-shadow: 0 -4px 2px -2px gray;
+}
+
+.button.add-to-deck {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00E676; /* Vert Néon */
+  color: #000000; /* Noir */
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button.add-to-deck:hover {
+  background-color: #FF5722; /* Orange Vibrant */
+  color: #FFFFFF;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #FFEB3B; /* Jaune Flash */
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: #00E676; /* Vert Néon */
+  text-decoration: underline;
+}
+
+.button, .link--addCard, .link--removeCard {
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.button:hover, .link--addCard:hover, .link--removeCard:hover {
+  transform: scale(1.1);
+}

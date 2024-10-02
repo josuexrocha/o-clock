@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+
+  <!-- Page Content -->
+  <div class="container container-main">
+
+      <div class="row">
+        <div class="col">
+          <h3 class="text-center">Votre liste de préférences</h3>
+
+          <table class="table">
+            <thead>
+              <th>Article</th>
+              <th>Prix HT</th>
+              <th></th>
+            </thead>
+            <tbody>
+              <% bookmarks.forEach(figurine => { %>
+                <tr>
+                  <td>
+                    <img class="img-thumbnail img-cart-list" src="/images/<%= figurine.name.toLowerCase() %>.png" alt="">
+                    <div class="item-description">
+                        <h5 class="item-title"><%= figurine.name %></h5>
+                    </div>
+                  </td>
+  
+                  <td>
+                    <p class="item-subtotal">$<%= figurine.price %></p>
+                  </td>
+  
+                  <td>
+                    <a href="#">Enlever de la liste</a>
+                  </td>
+                </tr>
+              <% }) %>
+
+
+          </table>
+
+          <div class="row">
+            <div class="col text-right">
+                <a class="btn btn-success" href="/">
+                  Retour à l'accueil
+                </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </div>
+
+<%- include('partials/footer') %>

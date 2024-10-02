@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu {
+    height: 30px;
+    margin-bottom: 50px;
+}
+
+.menu a {
+    color: black;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+.container {
+    text-align: center;
+    font-size: 2em;
+
+}
+
+.container__content {
+    margin: 50px;
+    font-size: 3em;
+}
+
+body.dark {
+    background-color: #000;
+}
+
+body.dark .menu a {
+    color: white;
+}
+
+body.dark .container{
+    color: white;
+}
