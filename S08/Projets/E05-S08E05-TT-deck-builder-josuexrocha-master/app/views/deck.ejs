@@ -2,7 +2,7 @@
 
 <%- include('header') %>
 
-    <h1 data-text="<%= title %>">
+    <h1>
         <%= title %>
     </h1>
 
@@ -19,7 +19,8 @@
                             </p>
                         </a>
                         <!-- Lien pour supprimer la carte du deck -->
-                        <a class="link--removeCard" title="Supprimer du deck" href="/deck/remove/<%= card.id %>">-</a>
+                        <button class="button remove-from-deck"
+                            onclick="location.href='/deck/remove/<%= card.id %>'">Supprimer du Deck</button>
                     </div>
                     <% }) %>
             </div>

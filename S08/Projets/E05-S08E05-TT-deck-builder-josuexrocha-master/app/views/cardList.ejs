@@ -2,7 +2,7 @@
 
 <%- include('header') %>
 
-  <h1 data-text="<%= title %>">
+  <h1>
     <%= title %>
   </h1>
 
@@ -17,7 +17,7 @@
           </p>
         </a>
         <!-- Lien pour ajouter la carte au deck -->
-        <a class="link--addCard" title="Ajouter au deck" href="/deck/add/<%= card.id %>">+</a>
+        <button class="button add-to-deck" onclick="location.href='/deck/add/<%= card.id %>'">Ajouter au Deck</button>
       </div>
       <% }) %>
   </div>

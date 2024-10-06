@@ -1,225 +1,336 @@
 /* public/css/style.css */
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.05) 2px,
-    transparent 2px,
-    transparent 4px
-  );
-  pointer-events: none;
-  z-index: 0;
-}
+/* Import des polices */
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Press+Start+2P&display=swap');
 
+/* Appliquer la police Dosis par défaut */
 body {
-  font-family: 'Press Start 2P', cursive;
-  background-color: #1B263B; /* Bleu Nuit */
-  color: #F5F5F5; /* Blanc Cassé */
-}
-
-h1 {
-  position: relative;
-  color: #FF5722; /* Orange Vibrant */
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-h1::before,
-h1::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: #00E676; /* Vert Néon */
-  background: none;
-  overflow: hidden;
-  clip: rect(0, 900px, 0, 0);
-  animation: glitch 2s infinite;
-}
-
-h1::after {
-  color: #E91E63; /* Rose Fuchsia */
-  animation-delay: -1s;
-}
-
-@keyframes glitch {
-  0% {
-    clip: rect(42px, 9999px, 44px, 0);
-    transform: skew(0.39deg);
-  }
-  5% {
-    clip: rect(85px, 9999px, 100px, 0);
-    transform: skew(0.43deg);
-  }
-  /* Ajouter d'autres étapes pour un effet plus réaliste */
-  100% {
-    clip: rect(42px, 9999px, 44px, 0);
-    transform: skew(0.39deg);
-  }
-}
-
-.header {
-  background-color: #455A64; /* Gris Foncé */
+  font-family: 'Dosis', sans-serif;
+  background-color: #222831; /* Couleur de fond principale */
+  color: #EEEEEE; /* Couleur du texte principal */
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-  padding: 10px 20px;
-  box-shadow: 0 4px 2px -2px gray;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.header a {
-  color: #FFEB3B; /* Jaune Flash */
+a {
+  color: #FFD369;
   text-decoration: none;
-  padding: 10px;
   transition: color 0.3s;
 }
 
-.header a:hover {
-  color: #00E676; /* Vert Néon */
+a:hover {
+  color: #EEEEEE;
 }
 
-.header .sitename {
-  font-size: 1.2em;
-  color: #E91E63; /* Rose Fuchsia */
+/* Wrapper général pour contenir toute la page */
+.page-wrapper {
+  position: relative;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  border: 10px solid #FFD369;
+  background-color: #393E46;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
-.header nav {
-  align-self: center;
+/* Conteneur global */
+.container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
 }
 
+/* Sidebar (Header Latéral) */
+.sidebar {
+  background-color: #393E46;
+  width: 150px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+  padding-left: 20px;
+  z-index: 1000;
+  border-radius: 30px 0 0 30px;
+}
+
+/* Contenu de la Sidebar */
+.sidebar-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Titre dans la Sidebar */
+.sidebar-title {
+  font-family: 'Press Start 2P', cursive;
+  color: #FFD369;
+  border: 1px solid #FFD369;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  width: 80px;
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
+.sidebar-title span {
+  line-height: 1.2;
+  font-size: 0.6em;
+  text-align: center;
+}
+
+/* Navigation dans la Sidebar */
+.sidebar-navigation {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.sidebar-navigation a {
+  color: #EEEEEE;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-navigation a:hover {
+  color: #FFD369;
+  background-color: #222831;
+}
+
+/* Positionnement du main */
 .main {
-  margin-top: 80px; /* Ajusté pour le header */
+  flex-grow: 1;
   padding: 20px;
+  margin: 20px;
+  border-radius: 15px;
+  background-color: #222831;
+  overflow-y: auto;
 }
 
+/* Titres dans le main */
 .main h1 {
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: bold;
-  margin-left: 0;
-  color: #FF5722; /* Orange Vibrant */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #FFD369;
+  text-align: center;
 }
 
 .main h3 {
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: bold;
-  color: #FFEB3B; /* Jaune Flash */
+  margin-top: 20px;
+  color: #FFD369;
+  text-align: center;
 }
 
-.cardsContainer {
+/* Conteneur des cartes */
+.cardsContainer, .deckContainer {
   display: flex;
   flex-wrap: wrap;
-  margin: 20px;
-  justify-content: space-evenly;
+  margin: 20px auto;
+  justify-content: center;
+  max-width: 1200px;
 }
 
-.cardsContainer .card {
-  flex-basis: 200px;
+/* Styles des cartes */
+.card {
+  flex-basis: 150px;
   position: relative;
   text-align: center;
-  background-color: #455A64; /* Gris Foncé */
-  border: 2px solid #E91E63; /* Rose Fuchsia */
-  border-radius: 10px;
+  background-color: #393E46;
+  border: 1px solid #FFD369;
+  border-radius: 8px;
   padding: 10px;
   margin: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.cardsContainer .card:hover {
+.card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 10px #FF5722; /* Orange Vibrant */
-  background-color: rgba(0, 0, 0, 0.8); /* Noir plus opaque */
+  box-shadow: 0 0 10px #FFD369;
 }
 
 .card img {
-  min-width: 120px;
+  width: 100%;
+  height: auto;
   border-radius: 5px;
 }
 
 .card .cardName {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  color: #FFEB3B; /* Jaune Flash */
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 5px 0;
-  font-size: 0.8em;
+  margin-top: 10px;
+  color: #FFD369;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-.card .link--addCard {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #00E676; /* Vert Néon */
+/* Boutons - Styles généraux */
+.button {
+  background-color: #FFD369;
+  color: #222831;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
   font-weight: bold;
-  text-decoration: none;
-  background-color: #000000;
-  padding: 5px;
-  border-radius: 50%;
   transition: background-color 0.3s, color 0.3s;
+  margin-top: 20px; /* Ajouter un espacement entre les boutons et les éléments */
 }
 
-.card .link--addCard:hover {
-  background-color: #FF5722; /* Orange Vibrant */
+.button:hover {
+  background-color: #EEEEEE;
+  color: #222831;
+}
+
+/* Boutons spécifiques */
+.button.add-to-deck {
+  background-color: #FFD369;
+}
+
+.button.remove-from-deck {
+  background-color: #FF4C4C;
   color: #FFFFFF;
 }
 
+.button.remove-from-deck:hover {
+  background-color: #FF7676;
+  color: #222831;
+}
+
+/* Lien de retour */
+.back-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Styles du footer */
 .footer {
   text-align: center;
-  position: fixed;
-  bottom: 0;
   width: 100%;
-  background-color: #455A64; /* Gris Foncé */
-  color: #F5F5F5; /* Blanc Cassé */
-  padding: 10px 0;
-  box-shadow: 0 -4px 2px -2px gray;
+  background-color: #393E46;
+  color: #EEEEEE;
+  z-index: 101;
+  border-radius: 0 0 30px 30px;
 }
 
-.button.add-to-deck {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #00E676; /* Vert Néon */
-  color: #000000; /* Noir */
-  text-decoration: none;
-  border-radius: 5px;
+/* Styles des formulaires de recherche */
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.search-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 20px;
+}
+
+.search-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.search-input, .uniform-height {
+  padding: 10px;
+  border: 1px solid #393E46;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 5px;
+  height: 50px;
+}
+
+.value-label {
+  margin-top: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   margin-top: 20px;
-  transition: background-color 0.3s, color 0.3s;
 }
 
-.button.add-to-deck:hover {
-  background-color: #FF5722; /* Orange Vibrant */
-  color: #FFFFFF;
+/* Styles pour la page de détail de carte */
+.card-detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
-.back-link {
-  display: inline-block;
-  margin-top: 20px;
-  text-decoration: none;
-  color: #FFEB3B; /* Jaune Flash */
-  transition: color 0.3s;
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.back-link:hover {
-  color: #00E676; /* Vert Néon */
-  text-decoration: underline;
+.card-image {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
-.button, .link--addCard, .link--removeCard {
-  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+.card-info {
+  text-align: center;
 }
 
-.button:hover, .link--addCard:hover, .link--removeCard:hover {
-  transform: scale(1.1);
+.card-attribute {
+  margin: 10px 0;
+}
+
+.card-values {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.card-values li {
+  margin: 5px 0;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  .sidebar-navigation a {
+    font-size: 0.9em;
+  }
+
+  .cardsContainer .card,
+  .deckContainer .card {
+    flex-basis: 130px;
+  }
 }

@@ -1,31 +1,43 @@
 <!-- views/header.ejs -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Triple Triad Deck-Builder</title>
-  <!-- reset.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-    integrity="sha256-gvEnj2axkqIj4wbYhPjbWV7zttgpzBVEgHub9AAZQD4=" crossorigin="anonymous" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <!-- homemade css -->
+  <title>Triple Triad Deck Builder</title>
+  <!-- Import des polices -->
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Press+Start+2P&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome (si utilisé) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-p8Ck0jIwIAF0bH1Z2V1B4wOqgHeBcP0KPC6AG4VClyStxMIl+I3VZiqkUYMgaw5Bv7VdpIfP4wW9EnSmC2m4tw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Feuille de style -->
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-  <header class="header">
-    <a class="sitename" href="/">Triple Triad Deck Builder</a>
+  <div class="page-wrapper"> <!-- Ajout de l'ouverture de la div -->
+    <div class="container">
+      <header class="sidebar">
+        <div class="sidebar-content">
+          <!-- Titre Empilé Verticalement et Lien vers la Page d'Accueil -->
+          <a href="/" class="sidebar-title">
+            <span>Triple</span>
+            <span>Triad</span>
+            <span>Deck</span>
+            <span>Builder</span>
+          </a>
+          <!-- Navigation Alignée Verticalement -->
+          <nav class="sidebar-navigation">
+            <a href="/"><i class="fas fa-list"></i> Cartes</a>
+            <a href="/search"><i class="fas fa-search"></i> Recherche</a>
+            <a href="/deck"><i class="fas fa-dice-five"></i> Decks</a>
+          </nav>
+        </div>
+      </header>
 
-    <nav>
-      <a href="/">Cartes</a>
-      <a href="/search">Recherche</a>
-      <a href="/deck">Decks</a>
-    </nav>
-  </header>
-
-  <main class="main">
+      <main class="main">
+        <!-- Le contenu spécifique à chaque page commencera ici -->
