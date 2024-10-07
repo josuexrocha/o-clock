@@ -1,0 +1,45 @@
+<!-- views/pages/cart.ejs -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <%- include('../partials/head') %>
+    <title>O'Coffee - Mon Panier</title>
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <section id="cart" class="cart-container">
+            <h1 class="page-title">Mon Panier</h1>
+            <% if (cart && cart.length > 0) { %>
+                <div class="cart-items">
+                    <% cart.forEach(item => { %>
+                        <div class="cart-item" data-product-id="<%= item.product_id %>">
+                            <img src="/images/coffees/<%= item.reference %>.png" alt="<%= item.name %>" class="cart-item-image">
+                            <div class="cart-item-details">
+                                <h3 class="cart-item-title"><%= item.name %></h3>
+                                <p class="cart-item-price">Prix: <%= item.price %>€</p>
+                                <div class="cart-item-quantity">
+                                    <button>-</button>
+                                    <span><%= item.quantity %></span>
+                                    <button>+</button>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+                <div class="cart-total">
+                    <h3>Total: <%= cartTotal.toFixed(2) %>€</h3>
+                </div>
+                <div class="cart-actions">
+                    <a href="/catalogue" class="btn btn-secondary">Continuer les achats</a>
+                    <button class="btn">Passer la commande</button>
+                </div>
+            <% } else { %>
+                <p>Votre panier est vide.</p>
+                <a href="/catalogue" class="btn">Voir le catalogue</a>
+            <% } %>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

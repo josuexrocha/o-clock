@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <!-- Common styles, scripts, and meta tags -->
+  <%- include('../partials/head') %>
+  
+  <!-- Title -->
+  <title>oCoffee | Catalogue</title>
+  
+  <!-- Style -->
+  <link rel="stylesheet" href="/css/pages/catalog.css">
+
+  <!-- Scripts -->
+  <script defer src="/js/catalog.js"></script>
+</head>
+
+<body>
+  <%- include('../partials/header') %>
+
+  <main>
+    <section id="catalog">
+      <h1>Notre catalogue</h1>
+      
+      <!-- Bonus : select a main category -->
+      <select id="category-dropdown" name="category" class="button" aria-label="Filtrer par caractéristique">
+        <option disabled selected>Choisir une caractéristique</option>
+        
+        <option value="*">Tous les produits</option>
+        <% categories.forEach(category => { %>
+          <option value="<%= category.id %>"><%= category.name %></option>
+        <% }) %>
+      </select>
+
+      <div class="articles only-display-3-articles" id="articles-list">
+        
+        <% articles.forEach(article => { %>
+          <article data-category-id="<%= article.category_id %>">
+            <img src="/images/coffees/<%= article.reference %>.webp" alt="<%= article.name %>">
+            <div>
+              <h2><%= article.name %></h2>
+              <p>Origine <%= article.origin_country %></p>
+              <p><%= article.price_per_kg %> €/kg</p>
+              <a class="button-outline" href="/article/<%= article.id %>">Voir le détail</a>
+            </div>
+          </article>
+        <% }) %>
+
+      </div>
+
+      <button class="button" id="see-all-products-button">Voir tous les produits</button>
+    </section>
+
+  </main>
+
+  <%- include('../partials/footer') %>
+
+</body>
+</html>

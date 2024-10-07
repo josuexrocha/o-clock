@@ -1,0 +1,42 @@
+/* public/css/partials/_register.css */
+.register-container {
+    max-width: 500px;
+    margin: 2em auto;
+    padding: 2em;
+    background-color: var(--background-medium);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .register-form input {
+    padding: 0.8em;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: var(--background-light);
+    color: var(--text-light);
+  }
+
+  .register-form input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+  }
+
+  .register-links {
+    margin-top: 1em;
+    text-align: center;
+  }
+
+  .register-links a {
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+
+  .register-links a:hover {
+    color: var(--secondary-color);
+  }

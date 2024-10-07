@@ -1,0 +1,28 @@
+{
+  "name": "ocoffee",
+  "version": "1.0.0",
+  "description": "ocoffee, boutique de café à Hauts-de-Cloques par les frère Pepper",
+  "directories": {
+    "doc": "docs"
+  },
+  "keywords": [
+    "café",
+    "boutique"
+  ],
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "contact@oclock.io",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "nodemon": "^3.0.1"
+  }
+}

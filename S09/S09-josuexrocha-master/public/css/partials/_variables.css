@@ -1,0 +1,23 @@
+/* Variables */
+:root {
+    --primary-color: #cac0a7;
+    --secondary-color: #6B4E2E;
+    --background-dark: #1b1713;
+    --background-medium: #2e2e2e;
+    --background-light: #3e3e3e;
+    --text-dark: #1c1c1c;
+    --text-light: #e0e0e0;
+    --overlay-dark: rgba(0, 0, 0, 0.8);
+    --overlay-medium: rgba(0, 0, 0, 0.4);
+
+    /* variables pour le header */
+    --header-bg-transparent: rgba(136, 117, 96, 0.7);
+    --header-bg-solid: rgba(136, 117, 96, 1);
+    --header-text: var(--text-light);
+    --header-hover: var(--primary-color);
+    --header-submenu-bg: var(--background-medium);
+    --header-submenu-hover: var(--background-light);
+    --header-submenu-border: var(--background-light);
+    --header-mobile-menu-bg: var(--background-dark);
+    --header-toggle-bar: var(--text-light);
+}

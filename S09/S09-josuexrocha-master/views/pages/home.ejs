@@ -1,0 +1,71 @@
+<!-- views/pages/home.ejs -->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <%- include('../partials/head') %>
+        <title>O'Coffee - Accueil</title>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+
+        <main>
+
+            <% if (typeof message !=='undefined' ) { %>
+                <div class="alert alert-success">
+                    <%= message %>
+                </div>
+                <% } %>
+
+                    <section id="hero">
+                        <div class="hero-text">
+                            <h1>O'Coffee</h1>
+                            <p>Découvrez le meilleur café du monde.</p>
+                        </div>
+                    </section>
+
+                    <section id="new-arrivals" aria-labelledby="new-arrivals-heading">
+                        <h2 id="new-arrivals-heading">Nouveautés</h2>
+                        <div class="cards">
+                            <% products.slice(0, 3).forEach(product=> { %>
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="image-container">
+                                            <img src="/images/coffees/<%= product.reference %>.png"
+                                                alt="<%= product.name %>, caractéristique <%= product.characteristic %>"
+                                                class="card-img">
+                                        </div>
+                                        <h3>
+                                            <%= product.name %>
+                                        </h3>
+                                        <p>
+                                            <%= product.description %>
+                                        </p>
+                                        <p class="price">Prix: <%= product.price %>€</p>
+                                        <a href="/product/<%= product.id %>" class="btn">Voir le produit</a>
+                                        <button class="btn add-to-cart" data-product-id="<%= product.id %>">Ajouter au
+                                            panier</button>
+                                    </div>
+                                </div>
+                                <% }); %>
+                        </div>
+                        <div class="btn-container">
+                            <a href="/catalogue" class="btn">Voir le catalogue</a>
+                        </div>
+                    </section>
+
+                    <section id="about-us">
+                        <h2>Qui sommes-nous ?</h2>
+                        <p>Jean et Jacques Pepper, deux frères passionnés par le café, sont les fondateurs de notre
+                            boutique. Avec une expertise approfondie et un amour profond pour cette délicieuse boisson,
+                            ils ont créé un espace où le café est célébré comme une expérience raffinée et inspirante.
+                        </p>
+                    </section>
+        </main>
+
+        <%- include('../partials/footer') %>
+</body>
+
+</html>

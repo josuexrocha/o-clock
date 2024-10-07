@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <!-- Common styles, scripts, and meta tags -->
+  <%- include('../partials/head') %>
+
+  <!-- Title -->
+  <title>oCoffee | <%= article.name %></title>
+
+  <!-- Style -->
+  <link rel="stylesheet" href="/css/pages/article.css">
+</head>
+
+<body>
+  <%- include('../partials/header') %>
+
+  <main>
+    <section id="article">
+      <h1 style="background-image: url('/images/coffees/<%= article.reference %>.webp')">
+        <%= article.name %>
+      </h1>
+
+      <p><%= article.description %></p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Origine</th>
+            <td><%= article.origin_country %></td>
+          </tr>
+          <tr>
+            <th>Caractéristique principale</th>
+            <td><%= article.category_name %></td>
+          </tr>
+          <tr>
+            <th>Prix au kg</th>
+            <td><%= article.price_per_kg %> €</td>
+          </tr>
+          <tr>
+            <th>Disponible actuellement</th>
+            <td><%= article.available ? '✅' : '❌' %></td>
+          </tr>
+          <tr>
+            <th>Référence SKU du produit</th>
+            <td><%= article.reference %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <a href="/catalog" class="button">Retour au catalogue</a>
+
+    </section>
+  </main>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>

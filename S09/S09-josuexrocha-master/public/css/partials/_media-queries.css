@@ -1,0 +1,107 @@
+/* Media Queries */
+@media (max-width: 1024px) {
+  .card {
+    flex: 1 1 calc(50% - 2em); /* 2 cartes par ligne sur les écrans moyens */
+    max-width: calc(50% - 2em);
+  }
+}
+
+@media (max-width: 768px) {
+  #hero {
+    flex-direction: column;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  #menu {
+    display: none;
+    flex-direction: column;
+    gap: 1em;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: var(--background-medium);
+    padding: 1em;
+    border-radius: 5px;
+  }
+
+  #menu-toggle {
+    display: flex;
+  }
+
+  #menu.show {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: var(--background-medium);
+    padding: 1em;
+    border-radius: 5px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--header-mobile-menu-bg);
+    display: none;
+  }
+  nav ul.show {
+    display: flex;
+  }
+
+  .user-submenu {
+    background-color: var(--header-mobile-menu-bg);
+    margin-top: 10px;
+    padding: 0;
+  }
+
+  .user-submenu li {
+    padding-left: 0;
+  }
+
+  .user-submenu a {
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--header-submenu-border);
+    color: var(--text-light);
+  }
+
+  .user-submenu li:last-child a {
+    border-bottom: none;
+  }
+
+  .user-submenu a:hover {
+    background-color: var(
+      --background-light
+    ); /* Effet de survol utilisant la couleur de fond claire */
+  }
+
+  .card {
+    flex: 1 1 calc(100% - 2em); /* 1 carte par ligne sur les petits écrans */
+    max-width: calc(100% - 2em);
+  }
+
+  .filter-group {
+    flex: 1 1 100%;
+  }
+
+  .product-content {
+    flex-direction: row;
+  }
+
+  .product-image-container {
+    width: 50%;
+    height: auto;
+  }
+
+  .product-info {
+    width: 50%;
+  }
+}

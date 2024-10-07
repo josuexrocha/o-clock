@@ -1,0 +1,12 @@
+/* About Us Section */
+#about-us {
+    padding: 2em 3em;
+    background-color: var(--background-light);
+    border-radius: 10px;
+    margin-top: 1em; /* Ajoute de l'espace au-dessus de la section */
+}
+
+#about-us p {
+    font-size: 1.2em;
+    line-height: 1.8;
+}

@@ -1,0 +1,13 @@
+/* New Arrivals Section */
+
+#new-arrivals .btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+#new-arrivals, .catalogue-content {
+    padding: 2em 3em;
+    background-color: var(--background-medium);
+    border-radius: 10px;
+}

@@ -1,0 +1,31 @@
+<!-- views/partials/header.ejs -->
+<header>
+    <div class="logo">
+      <img src="/images/logo.svg" alt="Logo de O'Coffee">
+    </div>
+    <nav>
+      <ul id="menu" role="navigation">
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/catalogue">Catalogue</a></li>
+        <% if (locals.isAuthenticated) { %>
+          <li class="user-menu">
+            <a href="#" id="user-toggle">Bonjour, <%= locals.firstName %></a>
+            <ul class="user-submenu">
+              <li><a href="/cart">Panier</a></li>
+              <li><a href="/profile">Profil</a></li>
+              <li><a href="/auth/logout">Déconnexion</a></li>
+            </ul>
+          </li>
+        <% } else { %>
+          <li><a href="/auth/login">Connexion</a></li>
+          <li><a href="/auth/register">Inscription</a></li>
+        <% } %>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <button id="menu-toggle" aria-label="Toggle menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </button>
+    </nav>
+  </header>

@@ -1,0 +1,83 @@
+/* Header */
+header {
+    background-color: var(--header-bg-transparent);
+    position: fixed;
+    top: -100px;
+    left: 0;
+    right: 0;
+    color: var(--header-text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: top 0.7s ease, background-color 0.7s ease;
+    z-index: 1000;
+}
+.header-visible {
+    top: 0;
+    background-color: var(--header-bg-solid);
+}
+header .logo img {
+    height: 50px;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5em;
+    margin-right: 1em;
+}
+nav a {
+    color: var(--header-text);
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: var(--header-hover);
+}
+#menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background-color: var(--header-bg-solid);
+    border: none;
+}
+#menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--header-toggle-bar);
+    margin: 4px 0;
+}
+
+/* Ajout des styles pour le sous-menu utilisateur */
+.user-menu {
+    position: relative;
+}
+.user-menu > a {
+    font-family: 'Merriweather', serif;
+}
+.user-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--header-submenu-bg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    border-radius: 0 0 4px 4px;
+}
+.user-submenu.show {
+    display: block;
+}
+.user-submenu li {
+    display: block;
+}
+.user-submenu a {
+    display: block;
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+.user-submenu a:hover {
+    background-color: var(--header-submenu-hover);
+}

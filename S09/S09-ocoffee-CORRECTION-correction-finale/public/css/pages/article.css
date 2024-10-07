@@ -1,0 +1,29 @@
+#article h1 {
+  padding: 5rem;
+  border-radius: 0.5rem;
+
+  background-position: center;
+  background-size: cover;
+
+  text-align: center;
+  font-size: 2rem;
+
+  box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.5); /* Overlay : https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image */
+}
+
+#article p {
+  font-size: 1.5rem;
+  font-style: italic;
+
+  margin: 2rem 0;
+}
+
+#article table {
+  width: 100%;
+  border-spacing: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#article th {
+  text-align: start;
+}

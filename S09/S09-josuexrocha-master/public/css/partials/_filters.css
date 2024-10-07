@@ -1,0 +1,141 @@
+/* Filters */
+.filters {
+  background-color: var(--background-medium);
+  padding: 1em;
+  border-radius: 10px;
+  margin-bottom: 0.5em;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filters h2 {
+  color: var(--primary-color);
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.filter-group {
+  flex: 1 1 calc(20% - 0.8em);
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 0.2em;
+  color: var(--text-light);
+  font-size: 0.9em;
+  font-family: "Bebas Neue", sans-serif;
+  text-align: left;
+}
+
+.filter-group select,
+.filter-group input[type="range"] {
+  width: 100%;
+  padding: 0.4em;
+  font-size: 0.9em;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  background-color: var(--background-light);
+  color: var(--text-light);
+  margin-top: auto;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.filter-group select:hover,
+.filter-group input[type="range"]:hover {
+  background-color: var(--background-medium);
+  border-color: var(--secondary-color);
+}
+
+.filter-group select:focus,
+.filter-group input[type="range"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--secondary-color);
+  background-color: var(--background-medium);
+}
+
+/* Personnalisation du thumb pour input[type="range"] */
+.filter-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--primary-color);
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.filter-group input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--primary-color);
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#reset-filters {
+  width: 100%;
+  padding: 0.4em;
+  font-size: 0.9em;
+  margin-top: 1.9em;
+  background-color: var(--background-light);
+  color: var(--text-light);
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#reset-filters:hover {
+  background-color: var(--background-medium);
+  border-color: var(--secondary-color);
+}
+
+.filter-group input[type="range"] {
+  margin-top: 0.2em;
+}
+
+#price-value {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 0.9em;
+  margin-left: 0.3em;
+}
+
+/* Styles spécifiques pour les sélecteurs */
+.filter-group select {
+  background-image: linear-gradient(
+      45deg,
+      transparent 50%,
+      var(--primary-color) 50%
+    ),
+    linear-gradient(135deg, var(--primary-color) 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.filter-group select:hover,
+.filter-group select:focus {
+  background-image: linear-gradient(
+      45deg,
+      transparent 50%,
+      var(--secondary-color) 50%
+    ),
+    linear-gradient(135deg, var(--secondary-color) 50%, transparent 50%);
+}

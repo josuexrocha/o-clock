@@ -1,0 +1,20 @@
+/* Catalogue */
+.catalogue-header {
+    font-size: 1.5em;
+    color: var(--primary-color);
+}
+
+.catalogue-content {
+    text-align: center;
+}
+
+.catalogue-content h1 {
+    color: var(--primary-color);
+    margin: 0.5em;
+    font-size: 2em;
+}
+
+.load-more-container {
+    display: flex;
+    justify-content: center;
+}

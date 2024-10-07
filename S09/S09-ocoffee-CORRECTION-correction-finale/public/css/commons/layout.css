@@ -1,0 +1,146 @@
+/* ====== General ======= */
+
+html {
+  position: relative;
+}
+
+body {
+  width: 80%;
+  min-height: 100vh;
+  
+  padding: 4rem 0;
+  margin: 0 auto;
+
+  background: linear-gradient(var(--color-brown) 0%, var(--color-dark) 100%);
+  color: var(--color-cream);
+
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+section {
+  margin: 8rem 0;
+}
+
+@media screen and (max-width: 720px) {
+  section {
+    margin: 4rem 0;
+  }
+}
+
+/* ======== Header ======== */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  font-size: 2rem;
+  color: var(--color-dark);
+  font-weight: bold;
+}
+
+header img  {
+  height: 3rem;
+  width: auto;
+}
+
+header nav {
+  color: var(--color-cream);
+}
+
+header ul {
+  display: flex;
+  gap: 2rem;
+}
+
+header li a {
+  font-size: 1.3rem;
+}
+
+header li a:hover {
+  color: var(--color-dark);
+}
+
+/* ======== Header burger menu (on small screen) ======== */
+
+header button {
+  background-color: inherit;
+  color: var(--color-cream);
+  height: 3rem;
+
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1280px) {
+  /* Hide "menu button" on large screen by default */
+  header button {
+      display: none;
+  }
+
+  /* Hide "Home link" on large screen by default */
+  header ul > :first-child {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  /* Hide all menu links on small screen by default */
+  header ul {
+    display: none;
+  }
+}
+
+/* When navbar is expanded, re-order stuff */
+header nav.expanded {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 80vw;
+  height: 100%;
+  padding: 4rem;
+  gap: 2rem;
+
+  color: var(--color-cream);
+  background-color: var(--color-dark);
+
+  animation: menu-slide-in 0.3s;
+}
+
+/* Bonus : extra animation */
+@keyframes menu-slide-in {
+  from {
+    width:  0vw;
+    padding: 4rem 0rem;
+    color: var(--color-dark);
+  }
+}
+
+header nav.expanded ul {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 1rem;
+}
+
+header nav.expanded a {
+  color: inherit;
+}
+
+/* ===========  Footer =========== */
+
+footer {
+  text-align: right;
+}

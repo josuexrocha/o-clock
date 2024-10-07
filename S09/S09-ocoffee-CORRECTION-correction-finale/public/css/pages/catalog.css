@@ -1,0 +1,63 @@
+#catalog h1 {
+  padding: 4.5rem;
+  background-image: url("/images/coffees/256505890.webp");
+  border-radius: 0.5rem;
+
+  text-align: center;
+  font-size: 2rem;
+}
+
+#catalog .articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); /* https://css-tricks.com/a-responsive-grid-layout-with-no-media-queries/ */
+  gap: 2rem;
+
+  margin-top: 5rem;
+}
+
+/* Bonus : hide all articles after the 3rd one until the user clicks the button to display more */
+#catalog .only-display-3-articles article:nth-child(n+4) {
+  display: none;
+}
+
+#catalog article {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 0.5rem;
+}
+
+#catalog article img {
+  height: 12rem;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+#catalog article div {
+  padding: 2rem;
+  text-align: end;
+}
+
+#catalog article h2 {
+  margin-bottom: 1rem;
+}
+
+#catalog article a {
+  margin-top: 1rem;
+}
+
+#catalog button {
+  margin: 2rem auto 0 auto;
+}
+
+#catalog select {
+  margin-top: 5rem;
+  width: 100%;
+  max-width: 30rem;
+
+  appearance: none;
+}
+
+#catalog .hidden {
+  display: none;
+}

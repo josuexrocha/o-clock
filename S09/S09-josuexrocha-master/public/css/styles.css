@@ -1,0 +1,26 @@
+/* public/css/styles.css */
+
+/* Import des polices */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap");
+
+/* Import des fichiers partiels */
+@import "./partials/_variables.css";
+@import "./partials/reset.css";
+@import "./partials/_base.css";
+@import "./partials/_header.css";
+@import "./partials/_hero.css";
+@import "./partials/_cards.css";
+@import "./partials/_new-arrivals.css";
+@import "./partials/_catalogue.css";
+@import "./partials/_filters.css";
+@import "./partials/_product-details.css";
+@import "./partials/_cart.css";
+@import "./partials/_login.css";
+@import "./partials/_register.css";
+@import "./partials/_contact.css";
+@import "./partials/_profile.css";
+@import "./partials/_about-us.css";
+@import "./partials/_footer.css";
+@import "./partials/_media-queries.css";

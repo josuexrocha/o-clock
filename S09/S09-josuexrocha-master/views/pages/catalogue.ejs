@@ -1,0 +1,92 @@
+<!-- views/pages/catalogue.ejs -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <%- include('../partials/head') %>
+    <title>O'Coffee - Catalogue</title>
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <div class="catalogue-content">
+            <h1>Notre catalogue</h1>
+            <div class="filters">
+                <h2>Filtres</h2>
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <label for="characteristic">Caractéristique:</label>
+                        <select name="characteristic" id="characteristic">
+                            <option value="all">Tous</option>
+                            <option value="Corsé">Corsé</option>
+                            <option value="Acide">Acide</option>
+                            <option value="Fruité">Fruité</option>
+                            <option value="Doux">Doux</option>
+                            <option value="Épicé">Épicé</option>
+                            <option value="Chocolaté">Chocolaté</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="sort-order">Trier par prix:</label>
+                        <select name="sort-order" id="sort-order">
+                            <option value="asc">Prix croissant</option>
+                            <option value="desc">Prix décroissant</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="show-latest">Afficher:</label>
+                        <select name="show-latest" id="show-latest">
+                            <option value="all">Tous les produits</option>
+                            <option value="latest">Derniers ajouts</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="price-range">Prix max: <span id="price-value"></span>€</label>
+                        <input type="range" id="price-range" min="0" max="100" value="100" step="1">
+                    </div>
+
+                    <div class="filter-group">
+                        <button id="reset-filters" class="btn">Réinitialiser</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="product-container" class="cards">
+                <% products.forEach(product => { %>
+                    <div class="card" data-characteristic="<%= product.characteristic %>" data-price="<%= product.price %>" data-date="<%= product.created_at %>">
+                        <div class="card-content">
+                            <div class="image-container">
+                                <img src="/images/coffees/<%= product.reference %>.png" alt="<%= product.name %>, caractéristique <%= product.characteristic %>" class="card-img">
+                            </div>
+                            <h3><%= product.name %></h3>
+                            <p><%= product.description %></p>
+                            <p class="price">Prix: <%= product.price %>€</p>
+                            <p><strong>Caractéristique:</strong> <%= product.characteristic %></p>
+                            <a href="/product/<%= product.id %>" class="btn">Voir le produit</a>
+                            <button class="btn add-to-cart" data-product-id="<%= product.id %>">Ajouter au panier</button>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+
+            <div id="no-results" style="display: none;">
+                <p>Aucun produit ne correspond à votre recherche.</p>
+            </div>
+
+            <div class="load-more-container">
+                <button id="load-more" class="btn">Voir plus</button>
+            </div>
+        </div>
+    </main>
+    <%- include('../partials/footer') %>
+    <script>
+        // Les variables initiales pour la pagination
+        let currentPage = <%= currentPage %>;
+        const totalPages = <%= totalPages %>;
+    </script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
