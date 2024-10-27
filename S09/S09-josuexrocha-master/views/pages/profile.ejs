@@ -1,26 +1,40 @@
 <!-- views/pages/profile.ejs -->
+<!-- views/pages/profile.ejs -->
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <%- include('../partials/head') %>
-    <title>O'Coffee - Mon Profil</title>
+        <title>O'Coffee - Mon Profil</title>
 </head>
+
 <body>
     <%- include('../partials/header') %>
-    <main>
-        <section id="profile" class="profile-container">
-            <h1>Bonjour, <%= user.firstName %> !</h1>
-            <div class="profile-info">
-                <p><strong>Prénom:</strong> <%= user.firstName %></p>
-                <p><strong>Nom:</strong> <%= user.lastName %></p>
-                <p><strong>Email:</strong> <%= user.email %></p>
-            </div>
-            <div class="profile-actions">
-                <a href="/profile/edit" class="btn">Modifier mon profil</a>
-                <a href="/orders" class="btn btn-secondary">Voir mes commandes</a>
-            </div>
-        </section>
-    </main>
-    <%- include('../partials/footer') %>
+        <main>
+            <section id="profile" class="profile-container" aria-labelledby="profile-heading">
+                <h1 id="profile-heading">Bonjour, <%= user.firstName %> !</h1>
+
+                <!-- Informations du profil -->
+                <div class="profile-info">
+                    <p><strong>Prénom :</strong>
+                        <%= user.firstName %>
+                    </p>
+                    <p><strong>Nom :</strong>
+                        <%= user.lastName %>
+                    </p>
+                    <p><strong>Email :</strong>
+                        <%= user.email %>
+                    </p>
+                </div>
+
+                <!-- Actions liées au profil -->
+                <div class="profile-actions">
+                    <a href="/profile/edit" class="btn">Modifier mon profil</a>
+                    <a href="/orders" class="btn btn-secondary">Voir mes commandes</a>
+                </div>
+            </section>
+        </main>
+        <%- include('../partials/footer') %>
 </body>
+
 </html>

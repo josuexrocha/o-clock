@@ -1,15 +1,22 @@
 <!-- views/partials/head.ejs -->
+<!-- views/partials/head.ejs -->
 
 <!-- Metas -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta
-  name="description"
-  content="O'Coffee - Découvrez le meilleur café du monde. Parcourez notre catalogue de cafés de qualité supérieure, des nouveautés aux classiques. Explorez notre catalogue de cafés délicieux et uniques chez O'Coffee." />
-<meta
-  name="keywords"
-  content="café, café de qualité, O'Coffee, Arabica, Robusta, nouveautés café, catalogue café, meilleurs cafés" />
+<meta name="description"
+    content="O'Coffee - Découvrez le meilleur café du monde. Parcourez notre catalogue de cafés de qualité supérieure, des nouveautés aux classiques. Explorez notre catalogue de cafés délicieux et uniques chez O'Coffee." />
+<meta name="keywords"
+    content="café, café de qualité, O'Coffee, Arabica, Robusta, nouveautés café, catalogue café, meilleurs cafés" />
 <meta name="author" content="O'Coffee" />
+
+<!-- Open Graph Meta Tags pour un meilleur SEO -->
+<meta property="og:title" content="O'Coffee - Découvrez le meilleur café du monde" />
+<meta property="og:description" content="Explorez notre catalogue de cafés délicieux et uniques chez O'Coffee." />
+<meta property="og:image" content="/images/og-image.jpg" />
+<meta property="og:url"
+    content="<%= typeof req !== 'undefined' ? req.protocol + '://' + req.get('host') + req.originalUrl : 'https://localhost:3000' %>" />
+<meta property="og:type" content="website" />
 
 <!-- Styles -->
 <link rel="stylesheet" href="/css/partials/reset.css" />
@@ -17,4 +24,4 @@
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
 <!-- Scripts -->
-<script src="/js/bundle.js"></script>
+<script src="/dist/bundle.js"></script>

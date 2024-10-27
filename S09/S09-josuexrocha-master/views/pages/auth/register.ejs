@@ -1,47 +1,75 @@
+<!-- views/pages/auth/register.ejs -->
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <%- include('../../partials/head') %>
-    <title>O'Coffee - Inscription</title>
+        <title>O'Coffee - Inscription</title>
 </head>
+
 <body>
     <%- include('../../partials/header') %>
-    <main>
-        <section id="register" class="register-container">
-            <h1 class="page-title">Inscription</h1>
-            <% if (locals.validationErrors && validationErrors.length > 0) { %>
-                <div class="alert alert-danger">
-                    <ul>
-                        <% validationErrors.forEach(error => { %>
-                            <li><%= error.msg %></li>
-                        <% }) %>
-                    </ul>
-                </div>
-            <% } %>
-            <form action="/auth/register" method="POST" class="register-form">
-                <div class="form-group">
-                    <label for="firstName">Prénom</label>
-                    <input type="text" id="firstName" name="firstName" required value="<%= locals.oldInput ? oldInput.firstName : '' %>">
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Nom</label>
-                    <input type="text" id="lastName" name="lastName" required value="<%= locals.oldInput ? oldInput.lastName : '' %>">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required value="<%= locals.oldInput ? oldInput.email : '' %>">
-                </div>
-                <div class="form-group">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn">S'inscrire</button>
-            </form>
-            <div class="register-links">
-                <p>Déjà un compte ? <a href="/auth/login">Se connecter</a></p>
-            </div>
-        </section>
-    </main>
-    <%- include('../../partials/footer') %>
+        <main>
+            <section id="register" class="register-container">
+                <h1 class="page-title">Inscription</h1>
+
+                <!-- Erreurs de validation -->
+                <% if (validationErrors && validationErrors.length> 0) { %>
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            <% validationErrors.forEach(error=> { %>
+                                <li>
+                                    <%= error.msg %>
+                                </li>
+                                <% }) %>
+                        </ul>
+                    </div>
+                    <% } %>
+
+                        <!-- Formulaire d'inscription -->
+                        <form action="/auth/register" method="POST" class="register-form" novalidate>
+                            <div class="form-group">
+                                <label for="firstName">Prénom :</label>
+                                <input type="text" id="firstName" name="firstName" required aria-required="true"
+                                    autocomplete="given-name" value="<%= oldInput ? oldInput.firstName : '' %>"
+                                    aria-describedby="firstNameHelp" />
+                                <small id="firstNameHelp" class="form-text">Votre prénom.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Nom :</label>
+                                <input type="text" id="lastName" name="lastName" required aria-required="true"
+                                    autocomplete="family-name" value="<%= oldInput ? oldInput.lastName : '' %>"
+                                    aria-describedby="lastNameHelp" />
+                                <small id="lastNameHelp" class="form-text">Votre nom de famille.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email :</label>
+                                <input type="email" id="email" name="email" required aria-required="true"
+                                    autocomplete="email" value="<%= oldInput ? oldInput.email : '' %>"
+                                    aria-describedby="emailHelp" />
+                                <small id="emailHelp" class="form-text">Votre email pour l'inscription.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Mot de passe :</label>
+                                <input type="password" id="password" name="password" required aria-required="true"
+                                    autocomplete="new-password" aria-describedby="passwordHelp" />
+                                <small id="passwordHelp" class="form-text">Le mot de passe doit contenir au moins 6
+                                    caractères, un chiffre et une majuscule.</small>
+                            </div>
+
+                            <button type="submit" class="btn">S'inscrire</button>
+                        </form>
+
+                        <div class="register-links">
+                            <p>Déjà inscrit.e ? <a href="/auth/login">Se connecter</a></p>
+                        </div>
+            </section>
+        </main>
+        <%- include('../../partials/footer') %>
 </body>
+
 </html>

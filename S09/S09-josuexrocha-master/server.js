@@ -1,3 +1,6 @@
+// server.js
+
+// Importation des modules
 const express = require("express");
 const https = require("node:https");
 const fs = require("node:fs");
@@ -9,13 +12,17 @@ const configureRoutes = require("./routes");
 const { notFound, errorHandler } = require("./helpers/errorHelpers");
 const setupSessionTable = require("./config/sessionSetup");
 
+// Configuration des variables d'environnement
 dotenv.config();
 
+// Création de l'application Express
 const app = express();
 
+// Configuration de l'application
 app.use(logger); // Logger personnalisé
 app.use(httpsRedirect); // Redirection HTTP -> HTTPS en production
 
+// Configuration des routes
 configureApp(app);
 configureRoutes(app);
 
@@ -26,8 +33,10 @@ setupSessionTable().catch(console.error);
 app.use(notFound);
 app.use(errorHandler);
 
+// Démarrage du serveur
 const PORT = process.env.PORT || 3000;
 
+// Démarrage du serveur en production ou en développement
 if (process.env.NODE_ENV === "production") {
 	app.listen(PORT, () => {
 		console.log(`Serveur de production démarré sur le port ${PORT}`);

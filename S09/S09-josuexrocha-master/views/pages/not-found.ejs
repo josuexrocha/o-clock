@@ -1,23 +1,23 @@
+<!-- views/pages/not-found.ejs -->
+
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <!-- Head Section -->
-    <%- include('../partials/head') %>
-    <title>Page non trouvée - O'Coffee</title>
-</head>
-<body>
-    <!-- Header Section -->
-    <%- include('../partials/header') %>
 
-    <!-- Main Content -->
-    <main>
-        <div class="error-page">
-            <h1 class="page-title">404 - Page non trouvée</h1>
-            <p>Désolé, la page que vous recherchez n'existe pas.</p>
-            <a href="/">Retour à la page d'accueil</a>
-        </div>
-    </main>
-    <!-- Footer Section -->
-    <%- include('../partials/footer') %>
+<head>
+    <%- include('../partials/head') %>
+        <title>404 - Page non trouvée - O'Coffee</title>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <main class="error-page">
+            <section role="alert" aria-labelledby="not-found-title">
+                <h1 id="not-found-title" class="page-title">404 - Page non trouvée</h1>
+                <p class="error-message">Désolé, la page que vous recherchez n'existe pas ou a été déplacée.</p>
+                <a href="/" class="btn btn-primary">Retour à la page d'accueil</a>
+            </section>
+        </main>
+        <%- include('../partials/footer') %>
 </body>
+
 </html>

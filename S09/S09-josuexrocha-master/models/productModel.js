@@ -25,7 +25,7 @@ function validateProduct(productData) {
 }
 
 // Récupère tous les produits avec pagination
-async function getAllProducts(limit = 6, offset = 0) {
+async function getAllProducts(limit = 12, offset = 0) {
 	try {
 		const query = "SELECT * FROM products ORDER BY id DESC LIMIT $1 OFFSET $2";
 		const { rows } = await db.query(query, [limit, offset]);
@@ -57,6 +57,74 @@ async function getProductById(productId) {
 		return rows[0];
 	} catch (error) {
 		throw new AppError("Erreur lors de la récupération du produit (DB)", 500);
+	}
+}
+
+async function getFilteredProducts({
+	characteristic,
+	maxPrice,
+	sortOrder,
+	showLatest,
+	limit = 6,
+	offset = 0,
+}) {
+	try {
+		let query = "SELECT * FROM products WHERE price <= $1";
+		const params = [maxPrice];
+		let paramIndex = 2;
+
+		// Filtrer par caractéristique si nécessaire
+		if (characteristic && characteristic !== "all") {
+			query += ` AND characteristic = $${paramIndex}`;
+			params.push(characteristic);
+			paramIndex++;
+		}
+
+		// Ajouter le tri en fonction de showLatest
+		if (showLatest === "latest") {
+			query += ` ORDER BY created_at DESC`;
+		} else {
+			query += ` ORDER BY price ${sortOrder === "desc" ? "DESC" : "ASC"}`;
+		}
+
+		// Ajouter la pagination
+		query += ` LIMIT $${paramIndex} OFFSET $${paramIndex + 1}`;
+		params.push(limit, offset);
+
+		console.log("Requête SQL générée : ", query);
+		console.log("Paramètres SQL : ", params);
+
+		const { rows } = await db.query(query, params);
+		return rows;
+	} catch (error) {
+		console.error("Erreur dans getFilteredProducts : ", error);
+		throw new AppError(
+			"Erreur lors de la récupération des produits filtrés (DB)",
+			500,
+		);
+	}
+}
+// Compte le nombre total de produits après filtres
+async function getFilteredProductsCount({ characteristic, maxPrice }) {
+	try {
+		let query = "SELECT COUNT(*) FROM products WHERE price <= $1";
+		const params = [maxPrice];
+		let paramIndex = 2;
+
+		if (characteristic && characteristic !== "all") {
+			query += ` AND characteristic = $${paramIndex}`;
+			params.push(characteristic);
+			paramIndex++;
+		}
+
+		const { rows } = await db.query(query, params);
+		return Number.parseInt(rows[0].count);
+	} catch (error) {
+		console.error("Erreur dans getFilteredProductsCount : ", error);
+		throw new AppError(
+			"Erreur lors du comptage des produits filtrés (DB)",
+			500,
+		);
 	}
 }
 
@@ -138,6 +206,8 @@ module.exports = {
 	getAllProducts,
 	getTotalProductsCount,
 	getProductById,
+	getFilteredProducts,
+	getFilteredProductsCount,
 	createProduct,
 	updateProduct,
 	deleteProduct,

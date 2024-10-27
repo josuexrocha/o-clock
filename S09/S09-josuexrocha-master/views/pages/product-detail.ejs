@@ -1,36 +1,66 @@
 <!-- views/pages/product-detail.ejs -->
+<!-- views/pages/product-detail.ejs -->
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <%- include('../partials/head') %>
-    <title><%= product.name %> - O'Coffee</title>
+        <title>
+            <%= product.name %> - O'Coffee
+        </title>
 </head>
+
 <body>
     <%- include('../partials/header') %>
-    <main>
-        <section class="product-detail-section">
-            <div class="product-card">
-                <div class="product-content">
-                    <div class="product-image-container">
-                        <img src="/images/coffees/<%= product.reference %>.png" alt="<%= product.name %>, caractéristique <%= product.characteristic %>" class="product-img">
-                    </div>
-                    <div class="product-info">
-                        <h2><%= product.name %></h2>
-                        <p><%= product.description %></p>
-                        <div class="product-details">
-                            <p><strong>Origine:</strong> <%= product.origin %></p>
-                            <p><strong>Caractéristique:</strong> <%= product.characteristic %></p>
-                            <p><strong>Référence:</strong> <%= product.reference %></p>
-                            <p><strong>Disponibilité:</strong> <%= product.available ? 'En stock' : 'Rupture de stock' %></p>
+        <main>
+            <section class="product-detail-section" aria-labelledby="product-title">
+                <div class="product-card" role="article" aria-labelledby="product-title">
+                    <div class="product-content">
+                        <!-- Image du produit -->
+                        <div class="product-image-container">
+                            <img src="/images/coffees/<%= product.reference %>.png"
+                                alt="Image du café <%= product.name %> avec la caractéristique <%= product.characteristic %>"
+                                class="product-img">
                         </div>
-                        <p class="price">Prix: <%= product.price %>€</p>
-                        <button class="btn add-to-cart" data-product-id="<%= product.id %>">Ajouter au panier</button>
+
+                        <!-- Détails du produit -->
+                        <div class="product-info">
+                            <h2 id="product-title">
+                                <%= product.name %>
+                            </h2>
+                            <p class="product-description">
+                                <%= product.description %>
+                            </p>
+
+                            <div class="product-details">
+                                <p><strong>Origine :</strong>
+                                    <%= product.origin %>
+                                </p>
+                                <p><strong>Caractéristique :</strong>
+                                    <%= product.characteristic %>
+                                </p>
+                                <p><strong>Référence :</strong>
+                                    <%= product.reference %>
+                                </p>
+                                <p><strong>Disponibilité :</strong>
+                                    <%= product.available ? 'En stock' : 'Rupture de stock' %>
+                                </p>
+                            </div>
+
+                            <!-- Prix du produit -->
+                            <p class="price">Prix : <%= product.price %>€</p>
+
+                            <!-- Bouton d'ajout au panier -->
+                            <button class="btn add-to-cart" data-product-id="<%= product.id %>">
+                                Ajouter au panier
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
-    <%- include('../partials/footer') %>
+            </section>
+        </main>
+        <%- include('../partials/footer') %>
 </body>
+
 </html>

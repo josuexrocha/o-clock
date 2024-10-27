@@ -37,6 +37,7 @@ const errorHandler = (err, req, res, next) => {
 	if (err.statusCode === 404) {
 		return res.status(404).render("pages/not-found", {
 			message: "Désolé, la page que vous recherchez n'existe pas.",
+			req,
 		});
 	}
 
@@ -46,6 +47,7 @@ const errorHandler = (err, req, res, next) => {
 			process.env.NODE_ENV === "production"
 				? "Une erreur est survenue"
 				: err.message,
+		req,
 	});
 };
 

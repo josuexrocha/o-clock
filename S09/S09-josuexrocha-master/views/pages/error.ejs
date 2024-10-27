@@ -1,16 +1,25 @@
+<!-- views/pages/error.ejs -->
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <%- include('../partials/head') %>
-    <title>Erreur - O'Coffee</title>
+        <title>Erreur - O'Coffee</title>
 </head>
+
 <body>
     <%- include('../partials/header') %>
-    <main>
-        <h1 class="page-title">Une erreur est survenue</h1>
-        <p><%= message %></p>
-        <a href="/" class="btn">Retour à l'accueil</a>
-    </main>
-    <%- include('../partials/footer') %>
+        <main class="error-page">
+            <section role="alert" aria-labelledby="error-title">
+                <h1 id="error-title" class="page-title">Une erreur est survenue</h1>
+                <p class="error-message">
+                    <%= message || "Quelque chose s'est mal passé. Veuillez réessayer plus tard." %>
+                </p>
+                <a href="/" class="btn btn-primary">Retour à l'accueil</a>
+            </section>
+        </main>
+        <%- include('../partials/footer') %>
 </body>
+
 </html>

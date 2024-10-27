@@ -1,31 +1,37 @@
 <!-- views/partials/header.ejs -->
+<!-- views/partials/header.ejs -->
 <header>
-    <div class="logo">
+  <div class="logo">
+    <a href="/" aria-label="Retour à la page d'accueil">
       <img src="/images/logo.svg" alt="Logo de O'Coffee">
-    </div>
-    <nav>
-      <ul id="menu" role="navigation">
-        <li><a href="/">Accueil</a></li>
-        <li><a href="/catalogue">Catalogue</a></li>
-        <% if (locals.isAuthenticated) { %>
-          <li class="user-menu">
-            <a href="#" id="user-toggle">Bonjour, <%= locals.firstName %></a>
-            <ul class="user-submenu">
-              <li><a href="/cart">Panier</a></li>
-              <li><a href="/profile">Profil</a></li>
-              <li><a href="/auth/logout">Déconnexion</a></li>
-            </ul>
-          </li>
+    </a>
+  </div>
+  <nav aria-label="Menu principal">
+    <ul id="menu" role="navigation">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/catalogue">Catalogue</a></li>
+      <% if (locals.isAuthenticated) { %>
+        <li class="user-menu">
+          <a href="#" id="user-toggle" aria-haspopup="true" aria-expanded="false">
+            Bonjour, <%= locals.firstName %>
+          </a>
+          <ul class="user-submenu" aria-label="Sous-menu utilisateur" role="menu">
+            <li><a href="/cart" role="menuitem">Panier</a></li>
+            <li><a href="/profile" role="menuitem">Profil</a></li>
+            <li><a href="/auth/logout" role="menuitem">Déconnexion</a></li>
+          </ul>
+        </li>
         <% } else { %>
           <li><a href="/auth/login">Connexion</a></li>
           <li><a href="/auth/register">Inscription</a></li>
-        <% } %>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-      <button id="menu-toggle" aria-label="Toggle menu">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </button>
-    </nav>
-  </header>
+          <% } %>
+
+            <li><a href="/contact">Contact</a></li>
+    </ul>
+    <button id="menu-toggle" aria-label="Basculer le menu">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </button>
+  </nav>
+</header>

@@ -1,38 +1,67 @@
-<!doctype html>
+<!-- views/pages/contact.ejs -->
+<!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <%- include('../partials/head') %>
-    <title>O'Coffee - Contact</title>
+        <title>O'Coffee - Contact</title>
 </head>
+
 <body>
     <%- include('../partials/header') %>
-    <main>
-        <section id="contact" class="contact-container">
-            <h1 class="page-title">Contactez-nous</h1>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Nom :</label>
-                    <input type="text" id="name" name="name" required>
+        <main>
+            <section id="contact" class="contact-container">
+                <h1 class="page-title">Contactez-nous</h1>
+                <form class="contact-form" action="/send-message" method="POST" novalidate>
+                    <!-- Affichage des erreurs -->
+                    <% if (errors && errors.length> 0) { %>
+                        <div class="alert alert-danger">
+                            <ul>
+                                <% errors.forEach(error=> { %>
+                                    <li>
+                                        <%= error.msg %>
+                                    </li>
+                                    <% }) %>
+                            </ul>
+                        </div>
+                        <% } %>
+
+                            <div class="form-group">
+                                <label for="name">Nom :</label>
+                                <input type="text" id="name" name="name" required aria-required="true"
+                                    aria-describedby="nameHelp" aria-label="Votre nom">
+                                <small id="nameHelp" class="form-text text-muted">Veuillez entrer votre nom
+                                    complet.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email :</label>
+                                <input type="email" id="email" name="email" required aria-required="true"
+                                    aria-describedby="emailHelp" aria-label="Votre adresse email">
+                                <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre
+                                    email avec qui que ce soit.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message :</label>
+                                <textarea id="message" name="message" required aria-required="true"
+                                    aria-describedby="messageHelp" aria-label="Votre message"></textarea>
+                                <small id="messageHelp" class="form-text text-muted">Rédigez ici votre message.</small>
+                            </div>
+
+                            <div class="btn-container">
+                                <button type="submit" class="btn">Envoyer !</button>
+                            </div>
+                </form>
+
+                <div class="contact-info">
+                    <p><strong>Adresse :</strong> 123 Rue du Café, 75000 Paris</p>
+                    <p><strong>Téléphone :</strong> 01 23 45 67 89</p>
+                    <p><strong>Email :</strong> <a href="mailto:contact@ocoffee.com">contact@ocoffee.com</a></p>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email :</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message :</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <div class="btn-container">
-                    <button type="submit" class="btn">Envoyer !</button>
-                  </div>
-            </form>
-            <div class="contact-info">
-                <p>Adresse : 123 Rue du Café, 75000 Paris</p>
-                <p>Téléphone : 01 23 45 67 89</p>
-                <p>Email : contact@ocoffee.com</p>
-            </div>
-        </section>
-    </main>
-    <%- include('../partials/footer') %>
+            </section>
+        </main>
+        <%- include('../partials/footer') %>
 </body>
+
 </html>

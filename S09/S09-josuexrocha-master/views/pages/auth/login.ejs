@@ -1,50 +1,75 @@
 <!-- views/pages/auth/login.ejs -->
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <%- include('../../partials/head') %>
-    <title>O'Coffee - Connexion</title>
+        <title>O'Coffee - Connexion</title>
 </head>
+
 <body>
     <%- include('../../partials/header') %>
-    <main>
-        <section id="login" class="login-container">
-            <h1 class="page-title">Connexion</h1>
-            <% if (locals.successMessage) { %>
-                <div class="alert alert-success">
-                    <%= successMessage %>
-                </div>
-            <% } %>
-            <% if (locals.loginError) { %>
-                <div class="alert alert-danger">
-                    <%= loginError %>
-                </div>
-            <% } %>
-            <% if (locals.validationErrors && validationErrors.length > 0) { %>
-                <div class="alert alert-danger">
-                    <ul>
-                        <% validationErrors.forEach(error => { %>
-                            <li><%= error.msg %></li>
-                        <% }) %>
-                    </ul>
-                </div>
-            <% } %>
-            <form action="/auth/login" method="POST" class="login-form">
-                <div class="form-group">
-                    <label for="email">Email :</label>
-                    <input type="email" id="email" name="email" required value="<%= locals.oldInput ? oldInput.email : '' %>">
-                </div>
-                <div class="form-group">
-                    <label for="password">Mot de passe :</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn">Se connecter</button>
-            </form>
-            <div class="login-links">
-                <p>Pas encore de compte ? <a href="/auth/register">S'inscrire</a></p>
-            </div>
-        </section>
-    </main>
-    <%- include('../../partials/footer') %>
+        <main>
+            <section id="login" class="login-container">
+                <h1 class="page-title">Connexion</h1>
+
+                <!-- Message de succès -->
+                <% if (successMessage) { %>
+                    <div class="alert alert-success" role="alert">
+                        <%= successMessage %>
+                    </div>
+                    <% } %>
+
+                        <!-- Message d'erreur -->
+                        <% if (loginError) { %>
+                            <div class="alert alert-danger" role="alert">
+                                <%= loginError %>
+                            </div>
+                            <% } %>
+
+                                <!-- Erreurs de validation -->
+                                <% if (validationErrors && validationErrors.length> 0) { %>
+                                    <div class="alert alert-danger" role="alert">
+                                        <ul>
+                                            <% validationErrors.forEach(error=> { %>
+                                                <li>
+                                                    <%= error.msg %>
+                                                </li>
+                                                <% }) %>
+                                        </ul>
+                                    </div>
+                                    <% } %>
+
+                                        <!-- Formulaire de connexion -->
+                                        <form action="/auth/login" method="POST" class="login-form" novalidate>
+                                            <div class="form-group">
+                                                <label for="email">Email :</label>
+                                                <input type="email" id="email" name="email" required
+                                                    aria-required="true" autocomplete="email"
+                                                    value="<%= oldInput ? oldInput.email : '' %>"
+                                                    aria-describedby="emailHelp" />
+                                                <small id="emailHelp" class="form-text">Entrez votre email de
+                                                    connexion.</small>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="password">Mot de passe :</label>
+                                                <input type="password" id="password" name="password" required
+                                                    aria-required="true" autocomplete="current-password"
+                                                    aria-describedby="passwordHelp" />
+                                                <small id="passwordHelp" class="form-text">Votre mot de passe doit
+                                                    contenir au moins 6 caractères.</small>
+                                            </div>
+
+                                            <button type="submit" class="btn">Se connecter</button>
+                                        </form>
+
+                                        <div class="login-links">
+                                            <p>Pas encore de compte ? <a href="/auth/register">S'inscrire</a></p>
+                                        </div>
+            </section>
+        </main>
+        <%- include('../../partials/footer') %>
 </body>
+
 </html>

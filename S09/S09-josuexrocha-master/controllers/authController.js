@@ -1,3 +1,5 @@
+// controllers/authController.js
+
 const bcrypt = require("bcrypt");
 const User = require("../models/userModel");
 const { AppError } = require("../helpers/errorHelpers");
@@ -17,6 +19,7 @@ function getLoginPage(req, res) {
 		oldInput: req.session.oldInput,
 		loginError: req.session.loginError,
 		successMessage: req.session.successMessage,
+		req,
 	});
 	clearSessionMessages(req); // Nettoyage de la session
 }
@@ -56,6 +59,7 @@ function getRegisterPage(req, res) {
 	res.render("pages/auth/register", {
 		validationErrors: req.session.validationErrors,
 		oldInput: req.session.oldInput,
+		req,
 	});
 	clearSessionMessages(req);
 }

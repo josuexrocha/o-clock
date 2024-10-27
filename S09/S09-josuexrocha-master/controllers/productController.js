@@ -5,21 +5,59 @@ const { AppError } = require("../helpers/errorHelpers");
 
 async function getAllProducts(req, res, next) {
 	try {
+		const characteristic = req.query.characteristic || "all";
+		const maxPrice = req.query.maxPrice ? Number(req.query.maxPrice) : 100;
+		const sortOrder = req.query.sortOrder || "asc";
+		const showLatest = req.query.showLatest || "all";
 		const page = Number.parseInt(req.query.page) || 1;
-		const limit = 6;
+		const limit = 6; // Ou le nombre que vous avez défini
 		const offset = (page - 1) * limit;
 
-		const products = await productModel.getAllProducts(limit, offset);
-		const totalProducts = await productModel.getTotalProductsCount();
+		console.log("Page:", page, "Limit:", limit, "Offset:", offset);
+		console.log("Appel à getFilteredProducts avec les paramètres :", {
+			characteristic,
+			maxPrice,
+			sortOrder,
+			showLatest,
+			limit,
+			offset,
+		});
+
+		// Récupérer les produits en fonction des filtres et pagination
+		const products = await productModel.getFilteredProducts({
+			characteristic,
+			maxPrice,
+			sortOrder,
+			showLatest,
+			limit,
+			offset,
+		});
+
+		// Récupérer le nombre total de produits filtrés
+		const totalProducts = await productModel.getFilteredProductsCount({
+			characteristic,
+			maxPrice,
+		});
+
 		const totalPages = Math.ceil(totalProducts / limit);
+
+		if (req.xhr || req.headers.accept.indexOf("json") > -1) {
+			return res.status(200).json({
+				products,
+				currentPage: page,
+				totalPages,
+			});
+		}
 
 		res.render("pages/catalogue", {
 			products,
 			currentPage: page,
 			totalPages,
 			totalProducts,
+			req,
 		});
 	} catch (error) {
+		console.error("Erreur lors de la récupération des produits : ", error);
 		next(new AppError("Erreur lors de la récupération des produits (DB)", 500));
 	}
 }
@@ -38,7 +76,7 @@ async function getProductById(req, res, next) {
 			return next(new AppError("Produit non trouvé", 404));
 		}
 
-		res.render("pages/product-detail", { product });
+		res.render("pages/product-detail", { product, req });
 	} catch (error) {
 		next(new AppError("Erreur lors de la récupération du produit (DB)", 500));
 	}
