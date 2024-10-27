@@ -15,7 +15,6 @@
   - [Installation](#installation)
   - [Utilisation](#utilisation)
   - [Bonnes Pratiques](#bonnes-pratiques)
-  - [Bonus](#bonus)
   - [Contributions](#contributions)
 
 ## Présentation
@@ -144,16 +143,6 @@ Une fois le serveur démarré, ouvrez votre navigateur et accédez à [http://lo
 - **Sécurité :** Utilisation de middlewares comme **helmet** pour sécuriser les en-têtes HTTP et **cors** pour gérer les requêtes cross-origin.
 - **Validation :** Les données utilisateur sont validées côté serveur pour assurer l'intégrité des données.
 - **Gestion des Sessions :** Implémentation sécurisée des sessions utilisateur avec **express-session** et **connect-pg-simple**.
-
-## Bonus
-
-Pour ceux qui souhaitent aller plus loin, voici quelques fonctionnalités complémentaires que vous pouvez implémenter :
-
-- **Carte Interactive :** Intégration d'une carte avec [Leaflet](https://leafletjs.com/).
-- **Formulaire de Contact :** Envoi d'emails de confirmation avec [EmailJS](https://www.emailjs.com/).
-- **Page d'Administration :** Gestion des cafés avec ajout de photos via [Multer](https://www.npmjs.com/package/multer).
-- **Déploiement :** Hébergement de l'application sur un PaaS comme [Render](https://render.com/) avec une base de données provisionnée.
-- **Fonctionnalités Personnelles :** Ajoutez des fonctionnalités qui vous passionnent !
 
 ## Contributions
 
