@@ -1,0 +1,22 @@
+<!-- src/views/profile.ejs -->
+<%- include("partials/header", {pageTitle: "Mon Profil"}) %>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <h1 class="mb-4">Mon profil sur O'quiz</h1>
+            <div class="mb-3">
+                <label class="form-label" for="firstname">Prénom</label>
+                <input class="form-control" type="text" id="firstname" value="<%= user.firstname %>" disabled>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="lastname">Nom</label>
+                <input class="form-control" type="text" id="lastname" value="<%= user.lastname %>" disabled>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" type="email" id="email" value="<%= user.email %>" disabled>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include("partials/footer") %>

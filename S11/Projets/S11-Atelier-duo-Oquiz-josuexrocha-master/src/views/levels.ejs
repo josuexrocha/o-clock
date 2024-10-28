@@ -1,0 +1,41 @@
+<%- include("partials/header", {pageTitle: "Gestion des niveaux"}) %>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="mb-4">Gestion des niveaux</h1>
+            <form action="/admin/levels/add" method="POST" class="mb-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="name" placeholder="Nouveau niveau" required aria-label="Nom du nouveau niveau">
+                    <button class="btn btn-primary" type="submit">Ajouter</button>
+                </div>
+            </form>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Nom</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% levels.forEach(level => { %>
+                        <tr>
+                            <td><%= level.name %></td>
+                            <td>
+                                <form action="/admin/levels/<%= level.id %>/edit" method="POST" class="d-inline-block me-2">
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control" name="name" value="<%= level.name %>" required aria-label="Modifier le nom du niveau">
+                                        <button type="submit" class="btn btn-warning">Modifier</button>
+                                    </div>
+                                </form>
+                                <a href="/levels/<%= level.id %>/delete" class="btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce niveau ?');">Supprimer</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include("partials/footer") %>

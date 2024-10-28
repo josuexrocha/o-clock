@@ -1,0 +1,10 @@
+<%- include("partials/header", {pageTitle: "Page non trouvée"}) %>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto text-center">
+            <h1 class="display-4 mb-4"><%= typeof message !== 'undefined' ? message : "Oupsy ! Tu es perdu ?" %></h1>
+            <p class="lead mb-4">La sortie, c'est par <a href="/" class="btn btn-primary">ici</a> !</p>
+        </div>
+    </div>
+</div>
+<%- include("partials/footer") %>

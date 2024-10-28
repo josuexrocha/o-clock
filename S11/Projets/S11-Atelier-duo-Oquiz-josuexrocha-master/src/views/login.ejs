@@ -1,0 +1,31 @@
+<!-- src/views/login.ejs -->
+<%- include("partials/header", {pageTitle: "Connexion"}) %>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <h1 class="mb-4">Se connecter</h1>
+            <% if (locals.message) { %>
+                <div class="alert alert-success" role="alert">
+                  <%= message %>
+                </div>
+              <% } %>
+            <% if (typeof error !== 'undefined') { %>
+                <div class="alert alert-danger" role="alert">
+                    <%= error %>
+                </div>
+            <% } %>
+            <form action="/login" method="POST">
+                <div class="mb-3">
+                    <label class="form-label" for="email">Email</label>
+                    <input class="form-control" type="email" id="email" name="email" placeholder="email@domain.com" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="password">Mot de passe</label>
+                    <input class="form-control" type="password" id="password" name="password" placeholder="*********" required>
+                </div>
+                <button type="submit" class="btn btn-primary d-block w-100 mt-4">Se connecter</button>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include("partials/footer") %>

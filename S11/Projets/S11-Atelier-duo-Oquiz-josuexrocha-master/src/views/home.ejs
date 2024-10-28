@@ -1,0 +1,60 @@
+<%- include("partials/header", {pageTitle: "Accueil"}) %>
+<div class="container py-5">
+  <% if (locals.message) { %>
+    <div class="alert alert-success" role="alert">
+      <%= message %>
+    </div>
+  <% } %>
+  <section class="row">
+    <div class="col-lg-8 mx-auto text-center">
+      <h1 class="display-4 mb-4 fade-in">Bienvenue sur O'Quiz</h1>
+      <p class="lead mb-5 fade-in delay-1">
+        Votre plateforme interactive de quiz éducatifs !
+        <span class="text-slider">
+          <span class="text-slider-current"></span>
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <div class="text-center mb-4 fade-in delay-2">
+    <p class="lead">
+      Découvrez <span class="fw-bold text-primary">6 quiz</span> sur cette page
+      et bien plus dans nos <a href="/themes">thèmes</a> !
+    </p>
+  </div>
+
+  <section class="row row-cols-1 row-cols-md-3 g-4" aria-label="Liste des quiz">
+    <% quizzes.forEach((quiz, index) => { %>
+    <article class="col fade-in delay-<%= index % 5 + 1 %>">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h2 class="card-title h5"><%= quiz.title %></h2>
+          <p class="card-text"><%= quiz.description %></p>
+          <p class="card-text">
+            <small class="text-muted"
+              >par <%= quiz.author.firstname %> <%= quiz.author.lastname
+              %></small
+            >
+          </p>
+          <p class="card-text">
+            <small class="text-muted"
+              >Thèmes : <%= quiz.Tags.map(tag => tag.name).join(', ') %></small
+            >
+          </p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+          <a href="/quiz/<%= quiz.id %>" class="btn btn-primary w-100">Jouer</a>
+        </div>
+      </div>
+    </article>
+    <% }) %>
+  </section>
+  <div class="text-center mt-5">
+    <a href="/tags" class="btn btn-primary btn-lg fade-in delay-5">
+      Découvrir tous nos thèmes
+      <i class="bi bi-arrow-right-circle ms-2"></i>
+    </a>
+  </div>
+</div>
+<%- include("partials/footer") %>

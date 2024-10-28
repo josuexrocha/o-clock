@@ -1,0 +1,17 @@
+<!-- src/views/admin.ejs -->
+<%- include("partials/header", {pageTitle: "Administration"}) %>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto text-center">
+            <h1 class="display-4 mb-4">Page d'administration</h1>
+            <p class="lead">Bienvenue dans l'interface d'administration. Ici, vous pouvez gérer les différents aspects de O'quiz.</p>
+            <nav class="mt-4">
+                <ul class="list-unstyled">
+                    <li><a href="/admin/levels" class="btn btn-primary mb-2">Gérer les niveaux</a></li>
+                    <!-- Ajoutez d'autres liens d'administration si nécessaire -->
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<%- include("partials/footer") %>

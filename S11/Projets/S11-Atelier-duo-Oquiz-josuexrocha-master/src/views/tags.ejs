@@ -1,0 +1,29 @@
+<%- include("partials/header", {pageTitle: "Thèmes"}) %>
+<div class="container py-5">
+    <h1 class="mb-4">Thèmes</h1>
+    <div class="row">
+        <% tags.forEach(tag => { %>
+            <div class="col-md-4 mb-4">
+                <article class="card">
+                    <div class="card-header">
+                        <h2 class="h5 mb-0"><%= tag.name %></h2>
+                    </div>
+                    <div class="card-body">
+                        <% if (tag.Quizzes && tag.Quizzes.length > 0) { %>
+                            <ul class="list-group list-group-flush">
+                                <% tag.Quizzes.forEach(quiz => { %>
+                                    <li class="list-group-item">
+                                        <a href="/quiz/<%= quiz.id %>" class="text-decoration-none"><%= quiz.title %></a>
+                                    </li>
+                                <% }) %>
+                            </ul>
+                        <% } else { %>
+                            <p class="card-text">Aucun quizz dans cette catégorie pour le moment.</p>
+                        <% } %>
+                    </div>
+                </article>
+            </div>
+        <% }) %>
+    </div>
+</div>
+<%- include("partials/footer") %>

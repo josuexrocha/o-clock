@@ -1,0 +1,30 @@
+<%- include("partials/header", {pageTitle: "Niveaux"}) %>
+<div class="container py-5">
+    <header class="row">
+        <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-4 mb-4">Tous les niveaux</h1>
+            <% if (typeof message !== 'undefined' && message) { %>
+                <div class="alert alert-primary" role="alert">
+                    <%= message %>
+                </div>
+            <% } %>
+        </div>
+    </header>
+
+    <section class="row row-cols-1 row-cols-md-3 g-4" aria-label="Liste des niveaux">
+        <% for (const level of levels) { %>
+            <div class="col">
+                <article class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title h5"><%= level.name %></h2>
+                        <a href="/levels/<%= level.id %>/delete" class="btn btn-danger btn-sm mt-3" 
+                           onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce niveau ?');">
+                            Supprimer
+                        </a>
+                    </div>
+                </article>
+            </div>
+        <% } %>
+    </section>
+</div>
+<%- include("partials/footer") %>

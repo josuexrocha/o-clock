@@ -1,0 +1,57 @@
+<%- include("partials/header", {pageTitle: quiz.title}) %>
+<div class="container py-5">
+    <article>
+        <header>
+            <h1 class="mb-4"><%= quiz.title %></h1>
+            <p class="h5 mb-4 text-muted"><%= quiz.description %></p>
+            <p class="mb-1">Par <%= quiz.author.firstname %> <%= quiz.author.lastname %></p>
+            <p class="mb-4"><small class="text-muted">Date de création : <%= new Date(quiz.createdAt).toLocaleDateString('fr-FR') %></small></p>
+        </header>
+
+        <section aria-label="Thèmes du quiz">
+            <h2 class="h5 mb-3">Thèmes</h2>
+            <div class="mb-4">
+                <% if (quiz.Tags && quiz.Tags.length > 0) { %>
+                    <% quiz.Tags.forEach(tag => { %>
+                        <span class="badge bg-primary me-2"><%= tag.name %></span>
+                    <% }) %>
+                <% } else { %>
+                    <p>Aucun thème disponible</p>
+                <% } %>
+            </div>
+        </section>
+
+        <section aria-label="Questions du quiz">
+            <h2 class="h5 mb-3">Questions</h2>
+            <% if (quiz.Questions && quiz.Questions.length > 0) { %>
+                <form id="quiz-form" aria-label="Formulaire du quiz">
+                    <% quiz.Questions.forEach((question, index) => { %>
+                        <div class="card mb-4 fade-in delay-<%= index % 5 + 1 %>">
+                            <div class="card-header">
+                                <span class="badge bg-info"><%= question.Level.name %></span>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-title fw-bold" id="question-<%= index %>"><%= question.description %></p>
+                                <fieldset aria-labelledby="question-<%= index %>">
+                                    <% question.Answers.forEach(answer => { %>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="question<%= index %>-answer<%= answer.id %>" name="question<%= index %>" value="<%= answer.id %>">
+                                            <label class="form-check-label" for="question<%= index %>-answer<%= answer.id %>">
+                                                <%= answer.description %>
+                                            </label>
+                                        </div>
+                                    <% }) %>
+                                </fieldset>
+                                <p class="card-text mt-3"><small class="text-muted"><%= question.anecdote %></small></p>
+                            </div>
+                        </div>
+                    <% }) %>
+                    <button class="btn btn-primary d-block mx-auto" type="submit">Envoyer</button>
+                </form>
+            <% } else { %>
+                <p>Aucune question disponible pour ce quiz.</p>
+            <% } %>
+        </section>
+    </article>
+</div>
+<%- include("partials/footer") %>

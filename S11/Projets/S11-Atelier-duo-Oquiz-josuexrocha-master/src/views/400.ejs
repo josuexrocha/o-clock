@@ -1,0 +1,11 @@
+<%- include("partials/header", {pageTitle: "Erreur 400"}) %>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto text-center">
+            <h1 class="display-4 mb-4">Oups ! Quelque chose cloche...</h1>
+            <p class="lead mb-4"><%= message %></p>
+            <p>Peut-être devrais-tu retourner à <a href="/" class="btn btn-primary">l'accueil</a> et réessayer ?</p>
+        </div>
+    </div>
+</div>
+<%- include("partials/footer") %>
